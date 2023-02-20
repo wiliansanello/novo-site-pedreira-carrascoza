@@ -1,10 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.jsx"
+    "./src/**/*.{js,jsx}",
+    "./src/pages/*.{js,jsx}",
+    "./src/components/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'default-product': "url('/sproduto1.jpg')"
+      },
+      width : {
+        '76' : '18.75rem',
+      },
+      padding: {
+        '100': '40rem'
+      },
+      keyframes: {
+        fade: {
+          'from': {opacity : .4},
+          'to': {opacity: 1}
+        }
+      }
+    },
   },
   plugins: [],
 }
