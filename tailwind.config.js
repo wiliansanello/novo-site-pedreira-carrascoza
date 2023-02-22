@@ -12,16 +12,11 @@ module.exports = {
       },
       width : {
         '76' : '18.75rem',
+        '192': '48rem'
       },
       padding: {
         '100': '40rem'
       },
-      keyframes: {
-        fade: {
-          'from': {opacity : .4},
-          'to': {opacity: 1}
-        }
-      }
     },
   },
   plugins: [],

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function Whatsapp(){
     return (
-        <div>
+        <div className="z-40">
             <a className="pt-48" href="#">
                 <Image className="p-24" src={WhatsappIcon} alt="WhatsApp da Pedreira Carrascoza" title="WhatsApp da Pedreira Carrascoza"/>    
             </a>

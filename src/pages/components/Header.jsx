@@ -70,34 +70,34 @@ export function Header(){
 
     return (        
 
-        <header className="flex fixed px-4 py-2 w-full h-20 bg-[#D9D9D9]">
+        <header className="flex fixed z-10 px-4 py-2 w-full h-20 bg-[#D9D9D9]">
             <a href="/"><Image src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" /></a>
             <div className="grid justify-items-center pl-20">                
                     <span>Rodovia Ângelo Cavalheiro, Km 04 - Cravinhos/SP<strong className="ml-8">(16)3951-1710</strong></span>
                     <div className="flex pt-1.5">            
                         <nav>                
-                            <ul className="flex list-none uppercase py-4">
-                                <li className="float-left font-bold px-8 hover:bg-[#1D2483] hover:text-white">
+                            <ul className="flex list-none uppercase py-4 cursor-pointer">
+                                <li className="float-left font-bold px-8 hover:bg-black hover:text-white">
                                     <a href="/">Home</a>
                                  </li>       
-                                <li id="whoarewe" className="px-8 hover:bg-[#1D2483]" onMouseEnter={setMenuVisible}>                                           
-                                    <a href="#" className="font-bold no-underline hover:text-white">Quem Somos</a> 
+                                <li id="whoarewe" className="px-8" onMouseEnter={setMenuVisible}>                                           
+                                    <a href="#" className="font-bold no-underline hover:bg-black hover:text-white">Quem Somos</a> 
                                     <ul 
                                         id="whoarewe-dropdown"
                                         onMouseLeave={setMenuHidden}
                                         className="hidden px-6 py-2 absolute bg-[#D9D9D9] shadow-lg text-center capitalize"
                                     >                                         
-                                        <li className="hover:bg-[#1D2483] hover:text-white">
+                                        <li className="hover:bg-black hover:text-white">
                                             <a href="/sobre-nos">Sobre nós</a>
                                             <div className="mx-1 py-1 border-b-2 border-[#9B8F8F]"/>
                                         </li>
                                         
-                                        <li className="hover:bg-[#1D2483] hover:text-white">
+                                        <li className="hover:bg-black hover:text-white">
                                             <a href="/missao">Missão</a>
                                             <div className="mx-1 py-1 border-b-2 border-[#9B8F8F]"/>
                                         </li>
                                         
-                                        <li className="hover:bg-[#1D2483] hover:text-white">
+                                        <li className="hover:bg-black hover:text-white">
                                             <a href="/qualidade">Qualidade</a>
                                             <div className="mx-1 py-1 border-b-2 border-[#9B8F8F]" />
                                         </li>       
@@ -132,7 +132,7 @@ export function Header(){
                                         </li>    
                                     </ul>           
                                 </li>
-                            <li><a className="inline-block text-center font-bold no-underline hover:bg-[#1D2483] px-8" href="/agrocar">Agrocar</a></li> 
+                            <li><a className="inline-block px-8 text-center font-bold no-underline hover:bg-[#1D2483] hover:text-white" href="/agrocar">Agrocar</a></li> 
                             <li id="location" className="hover:bg-[#1D2483]" onMouseEnter={setMenuVisible}>
                                 <a href="#" className="font-bold no-underline hover:text-white">Localização</a>
                                 <ul 
