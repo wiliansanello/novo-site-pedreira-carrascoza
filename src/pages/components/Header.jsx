@@ -77,11 +77,11 @@ export function Header(){
                     <div className="flex pt-1.5">            
                         <nav>                
                             <ul className="flex list-none uppercase py-4 cursor-pointer">
-                                <li className="float-left font-bold px-8 hover:bg-black hover:text-white">
+                                <li className="float-left font-bold px-8 hover:bg-black hover:text-white duration-200">
                                     <a href="/">Home</a>
                                  </li>       
-                                <li id="whoarewe" className="px-8" onMouseEnter={setMenuVisible}>                                           
-                                    <a href="#" className="font-bold no-underline hover:bg-black hover:text-white">Quem Somos</a> 
+                                <li id="whoarewe" className="px-8 hover:bg-black duration-200" onMouseEnter={setMenuVisible}>                                           
+                                    <a href="#" className="font-bold no-underline hover:text-white">Quem Somos</a> 
                                     <ul 
                                         id="whoarewe-dropdown"
                                         onMouseLeave={setMenuHidden}
@@ -103,7 +103,7 @@ export function Header(){
                                         </li>       
                                     </ul>                                     
                                 </li> 
-                                <li id="products" className="px-8 hover:bg-[#1D2483]" onMouseEnter={setMenuVisible}>                                                                    
+                                <li id="products" className="px-8 duration-200 hover:bg-black" onMouseEnter={setMenuVisible}>                                                                    
                                     <a href="/produtos" className="font-bold no-underline hover:text-white">Produtos</a>
                                     <ul 
                                         id="products-dropdown"
@@ -132,8 +132,8 @@ export function Header(){
                                         </li>    
                                     </ul>           
                                 </li>
-                            <li><a className="inline-block px-8 text-center font-bold no-underline hover:bg-[#1D2483] hover:text-white" href="/agrocar">Agrocar</a></li> 
-                            <li id="location" className="hover:bg-[#1D2483]" onMouseEnter={setMenuVisible}>
+                            <li><a className="inline-block px-8 text-center font-bold no-underline hover:bg-black hover:text-white duration-200" href="/agrocar">Agrocar</a></li> 
+                            <li id="location" className="hover:bg-black duration-200" onMouseEnter={setMenuVisible}>
                                 <a href="#" className="font-bold no-underline hover:text-white">Localização</a>
                                 <ul 
                                     id="location-dropdown" 
@@ -151,7 +151,7 @@ export function Header(){
                                     
                                 </ul>                                
                             </li>                                                    
-                            <li><a className="inline-block text-center font-bold no-underline hover:bg-[#1D2483] hover:text-white px-8" href="/contato">Contato</a></li>            
+                            <li><a className="inline-block text-center font-bold no-underline hover:bg-black hover:text-white px-8 duration-200" href="/contato">Contato</a></li>            
                         </ul>                                                                    
                     </nav>  
                     <input 
