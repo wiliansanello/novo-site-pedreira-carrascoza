@@ -3,6 +3,7 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import { Header } from "./components/Header";
 import { Whatsapp } from "./components/Whatsapp";
+import { Footer } from "./components/Footer";
 
 export default function App( {Component, pageProps} ) {
   return (
@@ -17,7 +18,8 @@ export default function App( {Component, pageProps} ) {
       </Head>   
       <Header />
         <Component {...pageProps} />
-        <Whatsapp />      
+        <Whatsapp />
+      <Footer />        
     </>
    )
 }

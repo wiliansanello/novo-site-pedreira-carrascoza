@@ -9,6 +9,13 @@ import { Carousel } from "./components/Carousel";
 import { CarouselImages } from "./components/CarouselImages";
 import { CompanyMap } from "./components/CompanyMap";
 
+import AboutUs from "./sobre-nos";
+import Mission from "./missao";
+import Quality from "./qualidade";
+import Products from "./produtos";
+import CitiesServed from "./cidades-atendidas";
+import { Contact } from "./contato";
+
 export default function Home() {
         
     
@@ -16,7 +23,11 @@ export default function Home() {
         <div>
             <CarouselImages />
            {/*<Carousel images={[foto1, foto2, foto3, foto4, foto5]} />*/} 
-
+            <AboutUs />
+            <Mission />
+            <Quality />
+            <Products />
+            <Contact />        
         </div>
     )
 }

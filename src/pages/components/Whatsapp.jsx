@@ -10,7 +10,7 @@ export function Whatsapp(){
                 target="_blank"
             >
                 <Image 
-                    className="fixed z-40 left-[84rem] top-[40rem] cursor-pointer hover:w-[72px] hover:h-[72] duration-200" 
+                    className="fixed z-40 sm:left-[42rem] sm:top-[48rem] w-16 lg:left-[84rem] lg:top-[40rem] cursor-pointer hover:w-[76px] duration-200" 
                     src="whatsapp-icon.svg" 
                     width={56} 
                     height={56} 
