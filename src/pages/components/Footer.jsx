@@ -1,7 +1,7 @@
 export function Footer(){
 
     return (
-        <footer className="grid sm:px-1 lg:px-4 py-2 w-full sm:h-36 lg:h-20 bg-[#D9D9D9]">
+        <footer className="sm:px-1 lg:px-4 py-2 w-full sm:h-36 lg:h-32 bg-[#D9D9D9]">
             <div className="flex text-center mb-4">
                 <p>2023 Pedreira Carrascoza LTDA © | </p>
                 <p>Mapa do Site</p>
@@ -9,7 +9,7 @@ export function Footer(){
             <div className="flex">
                 <p>Horário de Atendimento: </p>
                 <p>Segunda a Sexta: 6:00 às 17:00 | </p>
-                <p>Sábado: 6:00 às 11:00</p>
+                <p>Sábado: 6:00 às 11:00 (apenas expedição)</p>
             </div>
             <div className="flex">
                 <p>Contato</p>
