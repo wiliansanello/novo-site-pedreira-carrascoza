@@ -1,6 +1,5 @@
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import Image from 'next/image';
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 export function CarouselImages(){
@@ -12,17 +11,18 @@ export function CarouselImages(){
           (slider) => {
             let timeout
             let mouseOver = false
-
+            
             function clearNextTimeout() {
               clearTimeout(timeout)
             }
 
             function nextTimeout() {
+              
               clearTimeout(timeout)
               if (mouseOver) return
               timeout = setTimeout(() => {
                 slider.next()
-              }, 2000)
+              }, 4000)
             }
 
             slider.on("created", () => {
@@ -48,26 +48,14 @@ export function CarouselImages(){
       )   
 
     return (
-        <>
-       
-                <div ref={sliderRef} className="keen-slider">
-                    <div>
-                        <Image src="/banner1.jpg" fill className="snap-x scroll-smooth object-contain" alt="Imagens da Pedreira Carrascoza"/>
-                    </div>
-                    <div>
-                        <Image src="/banner2.jpg" fill className="snap-x scroll-smooth object-contain" alt="Imagens da Pedreira Carrascoza"/>
-                    </div>
-                    <div>
-                        <Image src="/banner3.jpg" fill className="snap-x scroll-smooth object-contain" alt="Imagens da Pedreira Carrascoza"/>
-                    </div>
-                    <div>
-                        <Image src="/banner4.jpg" fill className="snap-x scroll-smooth object-contain" alt="Imagens da Pedreira Carrascoza"/>
-                    </div>
-                    <div>
-                        <Image src="/banner5.jpg" fill className="snap-x scroll-smooth object-contain" alt="Imagens da Pedreira Carrascoza"/>
-                    </div>
-                </div>                
-                      
+        <>       
+          <div ref={sliderRef} className="keen-slider">      
+             <div className="keen-slider__slide number-slide1"/>
+             <div className="keen-slider__slide number-slide2"/>
+             <div className="keen-slider__slide number-slide3"/>
+             <div className="keen-slider__slide number-slide4"/>
+             <div className="keen-slider__slide number-slide5"/>
+          </div>      
         </>
     )
 

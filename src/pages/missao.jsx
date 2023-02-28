@@ -1,4 +1,4 @@
-export default function Mission() {
+export function Mission() {
     return (
         <article>
             <h1 className="sm:pt-40 lg:pt-28 text-5xl text-center">Missão</h1>          

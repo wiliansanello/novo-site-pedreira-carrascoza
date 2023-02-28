@@ -13,9 +13,7 @@ export function WebMenu({menuOption, subMenu}) {
 
     function setMenuVisible(e){
         setTarget(menuOption.id)
-        
-        console.log(menuOption.id, element);
-    
+                
         if (target === 'whoarewe') { 
             setElement('whoarewe-dropdown')
             }  else if(target === 'products') {

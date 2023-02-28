@@ -1,7 +1,11 @@
 export function ProductCard({title}){
     return (
-        <div className="inline-block">            
-            <div className="mt-4 px-2">
+        <>
+        <div className="border-b-2 border-[#9B8F8F] mb-4 text-center">
+            <h2 className="text-3xl text-center mt-7">{title}</h2>
+        </div>
+        <div className="inline-block">                        
+            <div className="mt-4 px-2 cursor-pointer">                
                 <div className="bg-default-product w-76 h-48">                
                     <div className="inline-block bg-black pt-1 pb-1 pl-3 pr-12 rounded-r-lg">
                         <p className="text-white text-base">Pedrisco - 1/4"</p>                        
@@ -15,5 +19,6 @@ export function ProductCard({title}){
                 </div>
             </div>
         </div>
+        </>
     )
 }

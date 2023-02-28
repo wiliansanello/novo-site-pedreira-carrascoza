@@ -5,4 +5,39 @@
 body {
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  [class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 600px;
+  max-height: 100vh;
+}
+
+.number-slide1 {
+  background-image: url('../../public/banner1_web.jpg');
+  width: 60%;
+}
+
+.number-slide2 {
+  background-image: url('../../public/banner2_web.jpg');
+}
+
+.number-slide3 {
+  background-image: url('../../public/banner3.jpg');
+}
+
+.number-slide4 {
+  background-image: url('../../public/banner4.jpg');
+}
+
+.number-slide5 {
+  background-image: url('../../public/banner5.jpg');
+}

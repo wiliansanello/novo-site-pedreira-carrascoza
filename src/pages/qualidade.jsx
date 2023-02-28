@@ -1,4 +1,4 @@
-export default function Quality() {
+export function Quality() {
     return (
         <article>
             <h1 className="sm:pt-40 lg:pt-28 text-5xl text-center">Compromisso com a Qualidade</h1>

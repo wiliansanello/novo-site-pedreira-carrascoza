@@ -16,7 +16,7 @@ export function Header(){
     const [display, setDisplay] = useState('none');
 
     function showSearchBar(){
-        document.getElementById("search-input").removeAttribute("hidden");
+        document.getElementById("search-input").style.visibilty('visible');
     }
 
     function showMobileMenu(){
@@ -33,7 +33,7 @@ export function Header(){
 
     return (        
 
-        <header className="flex fixed z-10 sm:px-1 lg:px-4 py-2 w-full sm:h-36 lg:h-20 bg-[#D9D9D9]">
+        <header className="flex fixed z-10 sm:px-1 lg:px-4 py-2 w-screen sm:h-36 lg:h-20 bg-[#D9D9D9]">
             <a href="/">
                 <Image className="z-40 lg:ml-4 sm:max-w-sm lg:w-48" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
             </a>
@@ -49,7 +49,7 @@ export function Header(){
                                 <Image src={facebookLogo} width="64" height="64" alt="Facebook da Pedreira Carrascoza" title="Facebook da Pedreira Carrascoza"/>
                             </a>  
                         </div>               
-                        <span className="sm:text-xl lg:text-base sm:ml-4 sm:-mt-16">Rodovia Ângelo Cavalheiro, Km 04 - Cravinhos/SP</span><span><strong className="lg:ml-8 sm:ml-32 sm:text-2xl lg:text-base">(16)3951-1710</strong></span>
+                        <span className="sm:text-xl lg:text-base sm:ml-4 lg:-ml-[30rem] sm:-mt-16">Rodovia Ângelo Cavalheiro, Km 04 - Cravinhos/SP</span><span><strong className="lg:ml-8 sm:ml-32 sm:text-2xl lg:text-base">(16)3951-1710</strong></span>
                     </div>
 
                     <div className="flex sm:pt-1.5 lg:-mt-8 ">            
@@ -124,7 +124,7 @@ export function Header(){
                         placeholder="Digite aqui o que está buscando..." 
                     />           
                     <div className="lg:flex sm:hidden">                        
-                        <button className="bg-transparent border-none" onClick={showSearchBar}>
+                        <button id="search-input" className="border-none -mt-14 -ml-[28rem]" onClick={showSearchBar}>
                             <Image src={searchIcon} alt="Pesquise em nosso site" title="Pesquise em nosso site" />
                         </button>
                         <a className="no-underline" href="https://www.instagram.com/pedreiracarrascoza" target="_blank">
