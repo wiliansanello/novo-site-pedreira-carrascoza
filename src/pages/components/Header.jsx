@@ -33,30 +33,26 @@ export function Header(){
 
     return (        
 
-        <header className="flex fixed z-10 sm:px-1 lg:px-4 py-2 w-screen sm:h-36 lg:h-20 bg-[#D9D9D9]">
+        <header className="md:flex fixed z-10 sm:px-1 md:px-4 md:py-2 lg:w-screen sm:h-36 lg:h-20 bg-[#D9D9D9]">
             <a href="/">
-                <Image className="z-40 lg:ml-4 sm:max-w-sm lg:w-48" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
+                <Image className="z-40 ml-2 mt-2 sm:w-32 md:max-w-md" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
             </a>
 
 
-            <div className="grid justify-items-center sm:pl-0 lg:pl-20">                         
-                    <div className="sm:flex flex-col lg:inline-block">
-                        <div className="sm:flex lg:hidden no-underline ml-[29rem]">
-                            <a className="no-underline" href="https://www.instagram.com/pedreiracarrascoza" target="_blank">
-                                <Image src={instagramLogo} width="64" height="64" alt="Instagram da Pedreira Carrascoza" title="Instagram da Pedreira Carrascoza"/>
-                            </a>
-                            <a className="no-underline" href="https://www.facebook.com/pedreiracarrascoza" target="_blank">
-                                <Image src={facebookLogo} width="64" height="64" alt="Facebook da Pedreira Carrascoza" title="Facebook da Pedreira Carrascoza"/>
-                            </a>  
-                        </div>               
-                        <span className="sm:text-xl lg:text-base sm:ml-4 lg:-ml-[30rem] sm:-mt-16">Rodovia Ângelo Cavalheiro, Km 04 - Cravinhos/SP</span><span><strong className="lg:ml-8 sm:ml-32 sm:text-2xl lg:text-base">(16)3951-1710</strong></span>
+            <div className="block justify-items-center ">                         
+                    <div className="sm:flex flex-col md:inline-block">                           
+                        <div className="sm:flex md:inline-flex px-24 md:px-[44rem] text-base">
+                            <p className="-ml-8 md:-ml-[30rem] ">Rodovia Ângelo Cavalheiro, Km 04</p>
+                            <p className="px-8 md:px-1"> Cravinhos/SP</p>
+                            <strong className="md:ml-8 sm:ml-32 text-2xl md:text-base">(16)3951-1710</strong>
+                        </div>
                     </div>
 
                     <div className="flex sm:pt-1.5 lg:-mt-8 ">            
                         <nav>
                             <div className="flex flex-col">
-                                <button className="sm:block lg:hidden" onClick={(showMobileMenu)}>
-                                    <RxHamburgerMenu size={40} className="-ml-[29.75rem]"/>                              
+                                <button className="block md:hidden" onClick={(showMobileMenu)}>
+                                    <RxHamburgerMenu size={40} className="-mt-24 -ml-[29.75rem]"/>                              
                                 </button>
                                 <span className="inline text-xl -ml-[30rem]">Menu</span> 
 
@@ -65,7 +61,8 @@ export function Header(){
                                      </ul>                                                                  
                                 </div>*/}
 
-                                <ul id="web-menu" className="lg:flex lg:flex-row sm:flex-col list-none uppercase py-4 sm:w-screen sm:text-2xl md:text-base cursor-pointer sm:hidden"> 
+                               
+                                <ul id="web-menu" className="md:flex list-none uppercase py-4 sm:w-screen text-2xl md:text-base cursor-pointer hidden"> 
                                     <li className="px-8 hover:bg-black hover:text-white duration-200">                               
                                         <WebMenu menuOption={ {url:"/", description: 'Home'} } />
                                     </li>
@@ -90,13 +87,14 @@ export function Header(){
                                                     {url: '/#brita', description: 'Brita'},
                                                     {url: '/#pedrisco', description: 'Pedrisco'},
                                                     {url: '/#bica', description: 'Bica'},
-                                                    {url: '/#areia', description: 'Areia'}
+                                                    {url: '/#areia', description: 'Areia'},
+                                                    {url: '/#po-de-basalto', description: 'Pó de Basalto'}
                                                 ]
                                             }
                                         />
                                     </li>
                                     <li className="px-8 hover:bg-black hover:text-white duration-200">
-                                        <WebMenu menuOption={{url:'/#agrocar', description: 'Agrocar'}} />
+                                        <WebMenu menuOption={{url:'/#ambiental', description: 'Ambiental'}} />
                                     </li>
                                     <li className="px-8 hover:bg-black hover:text-white duration-200">
                                         <WebMenu
@@ -113,20 +111,21 @@ export function Header(){
                                         <WebMenu  menuOption={{url:'/#contato', description:'Contato'}}/>  
                                     </li>                        
                                 </ul>
-                            </div>                      
-                                                                                                
+                            </div>                                                                                          
                     </nav>
-
-                    <input 
-                        className="h-8 mt-1 text-sm hidden" 
-                        type="text" 
-                        id="search-input" 
-                        placeholder="Digite aqui o que está buscando..." 
-                    />           
-                    <div className="lg:flex sm:hidden">                        
+                    <div className="inline-flex">
+                        <input 
+                            className="h-8 mt-4 mb-2 md:mt-1 ml-32 w-48 text-sm" 
+                            type="text" 
+                            id="search-input" 
+                            placeholder="Digite aqui o que está buscando..." 
+                        />                                            
                         <button id="search-input" className="border-none -mt-14 -ml-[28rem]" onClick={showSearchBar}>
                             <Image src={searchIcon} alt="Pesquise em nosso site" title="Pesquise em nosso site" />
                         </button>
+                    </div>  
+
+                    <div className="z-10 -mt-32 md:mt-48 ml-72 inline-flex md:flex">                    
                         <a className="no-underline" href="https://www.instagram.com/pedreiracarrascoza" target="_blank">
                             <Image src={instagramLogo} alt="Instagram da Pedreira Carrascoza" title="Instagram da Pedreira Carrascoza"/>
                         </a>
