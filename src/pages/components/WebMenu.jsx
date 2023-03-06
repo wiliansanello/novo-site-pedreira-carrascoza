@@ -75,7 +75,7 @@ export function WebMenu({menuOption, subMenu}) {
             <ul 
                 id={element}
                 onMouseLeave={setMenuHidden}
-                className="hidden z-40 py-2 md:mt-6 sm:ml-8 md:-ml-4 absolute bg-[#D9D9D9] shadow-lg text-center text-black sm:capitalize w-40"
+                className="hidden z-40 mt-6 ml-8 md:-ml-4 absolute bg-[#D9D9D9] shadow-lg text-center text-black sm:capitalize w-40"
             >  
                 {subMenu.map((item, i) => {                                     
                     return <li key={i} className="hover:bg-black hover:text-white transition-500">
