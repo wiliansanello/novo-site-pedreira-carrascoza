@@ -7,6 +7,7 @@ import { Quality } from "./qualidade";
 import { Products } from "./produtos";
 import { CitiesServed } from "./cidades-atendidas";
 import { Contact } from "./contato";
+import { Remineralizer } from "./remineralizador";
 
 export default function Home() {
         
@@ -17,6 +18,7 @@ export default function Home() {
             <Mission />
             <Quality />
             <Products />
+            <Remineralizer />
             {/*<CitiesServed />*/}
             <CompanyMap />
             <Contact />        
