@@ -1,71 +1,170 @@
 import { useState } from "react";
 
 import logo from "../../../public/logo-web.svg";
-import searchIcon from "../../../public/search-web.svg"
-import facebookLogo from "../../../public/facebook-web.svg";
-import instagramLogo from "../../../public/instagram-web.svg";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx"
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { RiInstagramLine} from "react-icons/ri"
+import { BsFacebook, BsSearch } from "react-icons/bs"
+import { MdPhone } from 'react-icons/md'
 
 import { WebMenu } from './WebMenu';
+import { Contacts } from "./Contacts";
+import { Address } from "./Address";
 
 export function Header(){ 
-    
+
+    const [target, setTarget] = useState('')
     const [element, setElement] = useState('');
-    const [visible, setVisible] = useState('hidden');
+    const [visible, setVisible] = useState(false);
+    const [toggleShow, setToggleShow] = useState('hidden')
     const [display, setDisplay] = useState('none');
 
     function showSearchBar(){
-        document.getElementById("search-input").style.visibilty('visible');
+        setElement("search-input")
+        setVisible(!visible)
+
+        if(visible){
+            setToggleShow('hidden');
+        } else {
+            setToggleShow('visible');
+        }    
+
+        if(element){
+            setDisplay('flex')
+            document.getElementById(element).style.visibilty = toggleShow;
+            document.getElementById(element).style.display = display;
+            setElement("")
+        }
     }
 
     function showMobileMenu(){
        
         setElement('web-menu');
-        setVisible('visible');
+        setVisible(!visible)
+
+        if(visible){
+            setToggleShow('hidden');
+        } else {
+            setToggleShow('visible');
+        }
         setDisplay('flex')
 
         if(element){
-            document.getElementById(element).style.visibilty = visible;
+            document.getElementById(element).style.visibilty = toggleShow;
             document.getElementById(element).style.display = display;
         }
     }
 
+    function showSocialMediaList(e){
+
+        setTarget(e.target.id);
+        setVisible(!visible);
+        console.log(e.target)
+        
+        if(visible){
+            setToggleShow('hidden');
+        } else {
+            setToggleShow('visible');
+        }
+
+        if (target === "instagram") {
+            setElement("instagram-popup");
+        } else if(target === "facebook") {
+            setElement("facebook-popup");
+        } else if (target === "location") {
+            setElement("location-popup");
+        } else if (target === "phone") {
+            setElement("phone-popup");
+        }
+                
+        if(element){
+            setDisplay("flex")
+            document.getElementById(element).style.visibility = toggleShow;
+            document.getElementById(element).style.display = display;            
+        }
+        console.log(element)
+    }
+
     return (        
-            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-48 md:h-20 bg-[#D9D9D9]">
+            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-16 md:h-[4.5rem] bg-slate-200">
                 <a href="/">
-                    <Image className="z-40 ml-32 md:ml-2 mt-2 w-44 md:max-w-md" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
+                    <Image className="z-40 ml-12 md:ml-2 mt-2 w-32 md:w-44" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
                 </a>                          
-                                        
-                <div className="flex flex-col md:flex-row text-base ml-12 md:ml-48">
-                    <p className="text-center">Rodovia Ângelo Cavalheiro, Km 04</p>
-                    <p className="hidden md:block md:px-1">-</p>
-                    <p className="text-center md:px-1"> Cravinhos/SP</p>
-                    <strong className="text-2xl md:text-base text-center -ml-12 md:ml-0 md:px-4">(16)3951-1710</strong>
+
+                <div className="absolute z-10 top-4 right-8 md:top-10 inline-flex md:flex">
+                        <RiInstagramLine  
+                            id="instagram"
+                            size={24} 
+                            alt="Perfis do Instagram da Pedreira Carrascoza" 
+                            title="Perfis do Instagram da Pedreira Carrascoza"
+                            className="cursor-pointer"
+                            onClick={showSocialMediaList}
+                        />
+                        <BsFacebook 
+                            id="facebook"
+                            size={24} 
+                            alt="Perfis do Facebook da Pedreira Carrascoza" 
+                            title="Perfis do Facebook da Pedreira Carrascoza"
+                            className="cursor-pointer"
+                            onClick={showSocialMediaList}
+                        />
+                    
+                    <div className="ml-8 inline-flex">
+                        <FaMapMarkerAlt 
+                            id="location"
+                            size={24} 
+                            alt="Endereço da Pedreira Carrascoza"
+                            title="Endereço da Pedreira Carrascoza"
+                            className="cursor-pointer"
+                            onClick={showSocialMediaList}    
+                        />
+                        <MdPhone
+                            id="phone"
+                            size={24}
+                            alt="Endereço da Pedreira Carrascoza"
+                            title="Endereço da Pedreira Carrascoza"  
+                            className="cursor-pointer" 
+                            onClick={showSocialMediaList}
+                        /> 
+                    </div>               
                 </div>
 
-                <div className=" absolute z-10 top-28 right-[4.5rem] md:top-0.5 md:right-[32rem] inline-flex md:flex">                    
-                    <a className="no-underline" href="https://www.instagram.com/pedreiracarrascoza" target="_blank">
-                        <Image src={instagramLogo} alt="Instagram da Pedreira Carrascoza" title="Instagram da Pedreira Carrascoza"/>
-                    </a>
-                    <a className="no-underline -ml-1" href="https://www.facebook.com/pedreiracarrascoza" target="_blank">
-                        <Image src={facebookLogo} alt="Facebook da Pedreira Carrascoza" title="Facebook da Pedreira Carrascoza"/>
-                    </a>                
+                <div id="instagram-popup" className="hidden">
+                    <Contacts contactsList={[
+                        {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
+                        {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
+                        ]}              
+                        title="Clique para seguir" />
+                </div>
+
+                <div id="facebook-popup" className="hidden">
+                    <Contacts contactsList={[
+                        {contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}
+                    ]} />
+                </div>
+
+                <div id="phone-popup" className="hidden">
+                    <Contacts contactsList = {[{contact:"(16)3951-1710", link:"tel:+1639511710"}]} title="Ligue para a Pedreira Carrascoza" /> 
+                </div>
+
+                <div id="location-popup" className="hidden">
+                    <Address /> 
                 </div>       
                   
                     <div>            
                         <nav>
                             <div className="flex flex-col">
-                                <button className="absolute z-10 top-[9.5rem] left-2 md:hidden" onClick={(showMobileMenu)}>
-                                    <RxHamburgerMenu size={36}/>                              
+                                <button className="absolute z-10 top-4 left-2 md:hidden" onClick={(showMobileMenu)}>
+                                    <RxHamburgerMenu size={28}/>                              
                                 </button>
 
-                               <div className="absolute mt-12 left-48">
-                                <ul id="web-menu" className="md:flex list-none uppercase sm:w-screen text-2xl md:text-base cursor-pointer hidden"> 
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">                               
+                               <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
+                                <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-xl md:text-base cursor-pointer"> 
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
                                         <WebMenu menuOption={ {url:"/", description: 'Home'} } />
                                     </li>
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu 
                                             menuOption={ {url : '#', description: 'Quem Somos', id:'whoarewe'} }
                                             subMenu={ 
@@ -77,7 +176,7 @@ export function Header(){
                                             }
                                         />
                                     </li>                                  
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
                                             menuOption={{url: '/#produtos', description: 'Produtos', id:'products'}}
                                             subMenu={
@@ -91,10 +190,10 @@ export function Header(){
                                             }
                                         />
                                     </li>
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu menuOption={{url:'/#remineralizador', description: 'Remineralizador'}} />
                                     </li>
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
                                             menuOption={{url:'#', description:'Localização', id:'location'}}
                                             subMenu={
@@ -105,26 +204,25 @@ export function Header(){
                                             }
                                         />
                                     </li>
-                                    <li className="px-8 hover:bg-black hover:text-white duration-200">
+                                    <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu  menuOption={{url:'/#contato', description:'Contato'}}/>  
                                     </li>                        
                                 </ul>
                                 </div>
                             </div>                                                                                          
                     </nav>
-                    <div className="absolute top-[9.5rem] md:top-2 right-12 md:mt-8">
+                    <div className="absolute inline-flex op-16 md:top-2 right-2 md:right-56 md:mt-8">
                         <input 
-                            className="h-8 w-56 md:w-48 text-sm" 
+                            className="h-6 w-56 md:w-48 text-sm hidden" 
                             type="text" 
                             id="search-input" 
                             placeholder="Procure por" 
-                        />                                            
-                        <button id="search-input" className="border-none ml-2" onClick={showSearchBar}>
-                            <Image src={searchIcon} alt="Pesquise em nosso site" title="Pesquise em nosso site" />
-                        </button>
-                    </div>  
-
-                                    
+                        />
+                        <button id="search-input" className="-left-24 border-none" onClick={showSearchBar}>
+                            <BsSearch size={24} alt="Pesquise em nosso site" title="Pesquise em nosso site" />
+                        </button>                    
+                                
+                    </div>                                   
                 </div>
             </header>                   
     )

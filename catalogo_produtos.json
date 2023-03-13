@@ -1,122 +1,107 @@
 [
   {
     "nome": "Areia de brita",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "areia",
-    "densidade": 1.723,
-    "laboratorio": "Sigmatec",
-    "data": "2015-03-01" 
+    "densidade": 1.723
   },
   {
     "nome": "Pó de pedra",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "areia",
-    "densidade": 1.723,
-    "laboratorio": "Sigmatec",
-    "data": "2015-03-01"
+    "densidade": 1.723    
   },
   {
     "nome": "Pedrisco - 1/4''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "pedrisco",
-    "densidade": 1.299,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.299
   },
   {
     "nome": "Pedrisco - 5/16''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "pedrisco",
-    "densidade": 1.518,
-    "laboratorio": "Sigmatec",
-    "data": "2015-05-01"
+    "densidade": 1.518
   },
   {
     "nome": "Pedrisco - 3/8''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "pedrisco",
-    "densidade": 1.524,
-    "laboratorio": "Sigmatec",
-    "data": "2015-05-01"
+    "densidade": 1.524
   },
   {
     "nome": "Pedra britada n°1 - 5/8''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "britada",
-    "densidade": 1.541,
-    "laboratorio": "Sigmatec",
-    "data": "2015-05-01"
+    "densidade": 1.541
   },
   {
     "nome": "Pedra britada n°1 - 3/4''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "britada",
-    "densidade": 1.562,
-    "laboratorio": "Sigmatec",
-    "data": "2015-05-01"
+    "densidade": 1.562
   },
   {
     "nome": "Pedra britada n°2 - 1 1/4''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "britada",
-    "densidade": 1.371,
-    "laboratorio": "Próprio",
-    "data": "2015-05-01"
+    "densidade": 1.371
   },
   {
     "nome": "Pedra britada n°3 - 2 1/4''",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "britada",
-    "densidade": 1.550,
-    "laboratorio": "Pattrol",
-    "data": "2015-12-01"
+    "densidade": 1.550
   },
   {
     "nome": "Bica corrida",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "bica",
-    "densidade": 1.669,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.669
   },
   {
     "nome": "Bica graduada",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "bica",
-    "densidade": 1.770,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.770
   },
   {
     "nome": "Pedra bruta (rachão, marroada, gabião)",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "bruta",
-    "densidade": 1.720,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.720
   },
   {
     "nome": "Areia lavada (média, fina e grossa)",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "areia",
-    "densidade": 1.500,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.500
   },
   {
     "nome": "Terra",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "britada",
-    "densidade": 1.500,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.500
   },
   {
     "nome": "Cascalho",
+    "texto_curto": "Descrição comercial",
     "descrição":"Descrição comercial",
     "categoria": "cascalho",
-    "densidade": 1.720,
-    "laboratorio": "Próprio",
-    "data": "2015-09-01"
+    "densidade": 1.720
   }
 ]

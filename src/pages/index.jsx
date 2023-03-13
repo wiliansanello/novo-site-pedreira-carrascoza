@@ -19,7 +19,7 @@ export default function Home() {
             <Quality />
             <Products />
             <Remineralizer />
-            {/*<CitiesServed />*/}
+            <CitiesServed />
             <CompanyMap />
             <Contact />        
         </div>
