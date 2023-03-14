@@ -19,6 +19,8 @@ export function Header(){
     const [visible, setVisible] = useState(false);
     const [toggleShow, setToggleShow] = useState('hidden')
     const [display, setDisplay] = useState('none');
+    const [contactList, setContactList] = useState([]);
+    const [description, setDescription] = useState('');
 
     function showSearchBar(){
         setElement("search-input")
@@ -60,7 +62,6 @@ export function Header(){
 
         setTarget(e.target.id);
         setVisible(!visible);
-        console.log(e.target)
         
         if(visible){
             setToggleShow('hidden');
@@ -69,21 +70,30 @@ export function Header(){
         }
 
         if (target === "instagram") {
-            setElement("instagram-popup");
+
+            setContactList([
+                {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
+                {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
+                ]);
+                setDescription('Clique para seguir');
+
         } else if(target === "facebook") {
-            setElement("facebook-popup");
-        } else if (target === "location") {
-            setElement("location-popup");
-        } else if (target === "phone") {
-            setElement("phone-popup");
+
+            setContactList([{contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}]);
+            setDescription('Clique para curtir a página');
+
+       } else if (target === "phone") {
+
+            setContactList([{contact:"(16)3951-1710", link:"tel:+1639511710"}]);
+            setDescription('Ligue para a Pedreira Carrascoza');
+
         }
                 
-        if(element){
+        if(contactList){
             setDisplay("flex")
-            document.getElementById(element).style.visibility = toggleShow;
-            document.getElementById(element).style.display = display;            
+            document.getElementById('popup').style.visibility = toggleShow;
+            document.getElementById('popup').style.display = display;            
         }
-        console.log(element)
     }
 
     return (        
@@ -130,28 +140,11 @@ export function Header(){
                     </div>               
                 </div>
 
-                <div id="instagram-popup" className="hidden">
-                    <Contacts contactsList={[
-                        {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
-                        {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
-                        ]}              
-                        title="Clique para seguir" />
+                <div id="popup" className="hidden">
+                    {(target === 'location') && <Address />}
+                    {(target !== 'location') && <Contacts contactsList={contactList} title={description} />}                    
                 </div>
-
-                <div id="facebook-popup" className="hidden">
-                    <Contacts contactsList={[
-                        {contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}
-                    ]} />
-                </div>
-
-                <div id="phone-popup" className="hidden">
-                    <Contacts contactsList = {[{contact:"(16)3951-1710", link:"tel:+1639511710"}]} title="Ligue para a Pedreira Carrascoza" /> 
-                </div>
-
-                <div id="location-popup" className="hidden">
-                    <Address /> 
-                </div>       
-                  
+                
                     <div>            
                         <nav>
                             <div className="flex flex-col">

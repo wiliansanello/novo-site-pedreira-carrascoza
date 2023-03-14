@@ -25,7 +25,7 @@ export function WebMenu({menuOption, subMenu }) {
             setElement('location-dropdown')
             } 
         
-        if(visible){
+        if(element && visible){
             setToggleShow('hidden');
             setDisplay('none');
             setDirection('row');
@@ -62,19 +62,19 @@ export function WebMenu({menuOption, subMenu }) {
                     <RxChevronDown size={16} />
                 </div>
             }
-            <div className="mx-1 md:mx-0 py-1 md:py-0 md:border-none border-b-2 border-slate-300"/>
+            <div className="mx-0 py-1 md:py-0 md:border-none border-b-2 border-slate-300"/>
 
             {subMenu && (
                 <ul 
                     id={element}
                     onMouseLeave={setVisibilityMenu}
-                    className="hidden z-40 mt-6 ml-8 md:-ml-4 absolute bg-slate-200 shadow-lg text-center text-black sm:capitalize w-40"
+                    className="hidden md:absolute z-40 md:mt-6 -ml-4 md:text-center w-screen md:w-40 bg-slate-200 shadow-lg text-black sm:capitalize"
                 >
                 
                     {subMenu.map((item, i) => {                                     
                         return <li key={i} className="hover:bg-orange-400 hover:text-white transition-500">
-                            <a href={item.url}>{item.description}</a>
-                            <div className="mx-8 py-1 border-b-2 border-slate-300"/>
+                            <a className="ml-12 md:ml-0" href={item.url}>{item.description}</a>
+                            <div className="mx-2 md:mx-8 py-1 border-b-2 border-slate-300"/>
                         </li>
                         })}                                      
                 </ul>            
