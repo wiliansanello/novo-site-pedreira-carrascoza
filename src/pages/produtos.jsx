@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+
 import { ProductCard } from "./components/ProductCard";
 import { api } from "../lib/axios";
 
 export function Products() {
 
-    //const response = await api.get('localhost:80/load-products');
-    //console.log(response.data);
+    useEffect(()=>{
+        async function fetchProductsCatalog(){
+            const response = await api.get('http://localhost:80/load-products/');
+            console.log(response.data);
+        };
+        fetchProductsCatalog();
+    },[]);
+
+    
 
     return (
         <div className="mx-6 md:mx-12">
