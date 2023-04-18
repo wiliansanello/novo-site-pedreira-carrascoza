@@ -17,22 +17,20 @@ export function WebMenu({menuOption, subMenu }) {
         setTarget(menuOption.id);
         setVisible(!visible);
                         
-        if (target === 'whoarewe') { 
-            setElement('whoarewe-dropdown')
-            }  else if(target === 'products') {
-            setElement('products-dropdown')
-            }  else if(target === "location") {
-            setElement('location-dropdown')
-            } 
+        if (target) { 
+            setElement(`${target}-dropdown`)
+            }  
         
-        if(element && visible){
-            setToggleShow('hidden');
-            setDisplay('none');
-            setDirection('row');
-        } else {
-            setToggleShow('visible');
-            setDisplay('flex');
-            setDirection('column'); 
+        if(element){
+            if (visible){
+                setToggleShow('hidden');
+                setDisplay('none');
+                setDirection('row');
+            } else {
+                setToggleShow('visible');
+                setDisplay('flex');
+                setDirection('column'); 
+            }
         }
         
         if(element){
