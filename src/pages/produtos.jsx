@@ -1,7 +1,7 @@
 import { ProductCard } from "./components/ProductCard";
 import { api } from "../lib/axios";
 
-export async function Products() {
+export function Products() {
 
     //const response = await api.get('localhost:80/load-products');
     //console.log(response.data);
