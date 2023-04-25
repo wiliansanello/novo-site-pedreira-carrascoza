@@ -12,8 +12,12 @@ import { Remineralizer } from './pages/remineralizador';
 import { CitiesServed} from './pages/cidades-atendidas';
 import { FindUs } from './pages/encontre-nos';
 import { Contact } from './pages/contato';
+import { useScroll } from 'framer-motion';
 
 function App() {
+
+  const { scrollYProgress } = useScroll();
+  console.log(scrollYProgress);
   
   return (
     <>

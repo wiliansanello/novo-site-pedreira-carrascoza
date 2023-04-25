@@ -1,7 +1,7 @@
 export function Contact() {
     return (
         <form className="pt-8">
-            <h1 className="text-center text-4xl py-4">Deixe sua mensagem</h1>
+            <h1 className="text-center text-4xl py-8">Deixe sua mensagem</h1>
             <p className="text-base md:text-lg px-6 md:px-12 indent-8">Se preferir, pode nos enviar uma mensagem diretamente por aqui. Retornaremos o mais breve possível, e será um prazer lhe atender.</p>
             <div className="md:flex flex-col my-2 text-base md:text-lg px-8 md:mx-72 ">
                 <p>Nome</p>

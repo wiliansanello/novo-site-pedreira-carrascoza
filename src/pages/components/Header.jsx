@@ -151,7 +151,7 @@ export function Header(){
                                <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
                                 <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-xl md:text-base cursor-pointer"> 
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
-                                        <WebMenu menuOption={ {url:"/", description: 'Home'} } />
+                                        <WebMenu menuOption={ {url:"/", description: 'Início'} } />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu 
