@@ -59,6 +59,10 @@ export function Header(){
 
     function showSocialMediaList(e){
 
+        if (target !== '') {
+            setTarget('');
+        }
+
         setTarget(e.target.id);
         setVisible(!visible);
         
@@ -151,16 +155,16 @@ export function Header(){
                                <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
                                 <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-xl md:text-base cursor-pointer"> 
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
-                                        <WebMenu menuOption={ {url:"/", description: 'Início'} } />
+                                        <WebMenu menuOption={ {url:"#", description: 'Início'} } />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu 
                                             menuOption={ {url : '#', description: 'Quem Somos', id:'whoarewe'} }
                                             subMenu={ 
                                                 [
-                                                    { url: '/#sobre-nos', description: 'Sobre nós' },
-                                                    { url: '/#missao', description: 'Missão' },
-                                                    { url: '/#qualidade', description: 'Qualidade'}
+                                                    { url: '#sobre-nos', description: 'Sobre nós' },
+                                                    { url: '#missao', description: 'Missão' },
+                                                    { url: '#qualidade', description: 'Qualidade'}
                                                 ] 
                                             }
                                         />

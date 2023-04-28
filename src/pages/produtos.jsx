@@ -1,6 +1,12 @@
 import { ProductCard } from './components/ProductCard';
+import { api } from '../lib/axios';
+import * as dotenv from 'dotenv';
 
-export function Products() {
+export async function Products() {
+
+    dotenv.config();
+    const response = await api.get(process.env.SERVER_ADDRESS+'load-products/');
+    console.log(response.data);
 
    return (
         <div className="mx-6 md:mx-12">
@@ -12,7 +18,13 @@ export function Products() {
                 </p>
             </div>
             <div className="flex flex-col md:flex-row">
-                <ProductCard title="Pedrisco" />         
+                <ProductCard product={
+                    {
+                        title:"Pedrisco 1/4 pol", 
+                        description:"Descrição comercial resumida", 
+                        density:"1.299 ton/m³"
+                    }
+                }/>
             </div>         
         </div>
     )

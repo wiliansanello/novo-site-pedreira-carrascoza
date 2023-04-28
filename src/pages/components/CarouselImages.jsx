@@ -83,7 +83,7 @@ export function CarouselImages(){
               />
               <AiOutlineRight
                 size={72}
-                className="cursor-pointer text-transparent hover:text-orange-400 absolute md:left-[87rem] lg-[97rem]"
+                className="cursor-pointer text-transparent hover:text-orange-400 absolute left-[76rem]" // md:left-[87rem] lg:left-[97rem]
                 onClick={(e) => e.stopPropagation() || instanceRef.current?.next()}
                 disabled={currentSlide === instanceRef.current.track.details.slides.length - 1} 
               />       
@@ -91,7 +91,7 @@ export function CarouselImages(){
           )}
           
           {instanceRef.current && (
-          <div className="hidden md:flex absolute top-96 left-[39rem] space-x-4 cursor-pointer">
+          <div className="hidden md:flex absolute top-[22rem] left-[37rem] space-x-4 cursor-pointer"> {/*top-96 left-[39rem]*/}
             {[
               ...Array(instanceRef.current.track.details.slides.length).keys(),
             ].map((idx)=>{
@@ -100,7 +100,7 @@ export function CarouselImages(){
                   key={idx} 
                   onClick={()=>{instanceRef.current?.moveToIdx(idx)}}
                   size={12} 
-                  className={(currentSlide === idx ? "active:text-orange-400" : "text-slate-200")}
+                  className={(currentSlide === idx ? "text-orange-400" : "text-slate-200")}
                 />
               )
             })}           
