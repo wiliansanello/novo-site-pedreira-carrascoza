@@ -1,12 +1,7 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
 
-export function axios() {
-    dotenv.config();
+export const api = axios.create({
+    baseURL: import.meta.env.VITE_SERVER_ADDRESS
+});
 
-    const api = axios.create({
-        baseURL: process.env.SERVER_ADDRESS
-    });
 
-    return api;
-}
