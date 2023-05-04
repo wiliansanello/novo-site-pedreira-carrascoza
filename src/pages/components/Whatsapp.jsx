@@ -7,7 +7,7 @@ export function Whatsapp(){
                 target="_blank"
             >
                 <img 
-                    className="fixed z-40 w-18 right-4 bottom-4 md:right-10 md:bottom-10 md:w-16 cursor-pointer hover:w-[76px] duration-200" 
+                    className="fixed z-10 w-18 right-4 bottom-4 md:right-10 md:bottom-10 md:w-16 cursor-pointer hover:w-[76px] duration-200" 
                     src="whatsapp-icon.svg" 
                     width={56} 
                     height={56} 

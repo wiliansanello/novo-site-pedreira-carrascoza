@@ -1,5 +1,10 @@
+import * as Dialog from '@radix-ui/react-dialog';
+import { useState, useEffect } from 'react';
+
+import { api } from './lib/axios';
 
 import './styles/globals.css';
+
 import { Header } from './pages/components/Header';
 import { CarouselImages } from './pages/components/CarouselImages';
 import { Whatsapp } from './pages/components/Whatsapp';
@@ -13,8 +18,19 @@ import { CitiesServed} from './pages/cidades-atendidas';
 import { FindUs } from './pages/encontre-nos';
 import { Contact } from './pages/contato';
 import { useScroll } from 'framer-motion';
+import { ProductModal } from './pages/components/ProductModal';
+import { ProductCard } from './pages/components/ProductCard';
 
 function App() {
+
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(()=>{        
+    const response = api.get('load-products/')
+        .then((res)=>{console.log(res)})
+        .catch((err)=> {console.log(err)});
+        setProductsData(response.data);
+  },[]);
 
   const { scrollYProgress } = useScroll();
   console.log(scrollYProgress);
@@ -31,13 +47,28 @@ function App() {
         <CarouselImages />
         <AboutUs />
         <Quality />
-        <Mission />
-        <Products />
+        <Mission />        
+        <Dialog.Root>
+          <Products />
+          <Dialog.Trigger>
+                <div className="flex flex-col md:flex-row">
+                    <ProductCard 
+                        title = "Pedrisco 1/4 pol"
+                        description = "Descrição Comercial"
+                        density = "1.299 ton/m³"
+                    />
+                </div>
+            </Dialog.Trigger>    
+          <ProductModal 
+                title= "Pedrisco 1/4 pol"
+                completeDescription = "Essa é uma descrição completa do produto"
+            />                  
+        </Dialog.Root>
         <Remineralizer />
         <CitiesServed />
         <FindUs />
         <Contact />
-        <Whatsapp />
+        <Whatsapp />        
       <Footer />        
     </>
   )
