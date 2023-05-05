@@ -1,4 +1,3 @@
-import * as Dialog from '@radix-ui/react-dialog';
 import { useState, useEffect } from 'react';
 
 import { api } from './lib/axios';
@@ -23,14 +22,14 @@ import { ProductCard } from './pages/components/ProductCard';
 
 function App() {
 
-  const [productsData, setProductsData] = useState([]);
+  /*const [productsData, setProductsData] = useState([]);
 
   useEffect(()=>{        
     const response = api.get('load-products/')
         .then((res)=>{console.log(res)})
         .catch((err)=> {console.log(err)});
         setProductsData(response.data);
-  },[]);
+  },[]);*/
 
   const { scrollYProgress } = useScroll();
   console.log(scrollYProgress);
@@ -48,22 +47,7 @@ function App() {
         <AboutUs />
         <Quality />
         <Mission />        
-        <Dialog.Root>
-          <Products />
-          <Dialog.Trigger>
-                <div className="flex flex-col md:flex-row">
-                    <ProductCard 
-                        title = "Pedrisco 1/4 pol"
-                        description = "Descrição Comercial"
-                        density = "1.299 ton/m³"
-                    />
-                </div>
-            </Dialog.Trigger>    
-          <ProductModal 
-                title= "Pedrisco 1/4 pol"
-                completeDescription = "Essa é uma descrição completa do produto"
-            />                  
-        </Dialog.Root>
+        <Products />                       
         <Remineralizer />
         <CitiesServed />
         <FindUs />
