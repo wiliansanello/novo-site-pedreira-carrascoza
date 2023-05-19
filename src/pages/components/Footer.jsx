@@ -6,8 +6,7 @@ export function Footer(){
     return (
         <footer className="sm:px-1 lg:px-4 py-2 w-full sm:h-36 lg:h-32 bg-slate-200">
             <div className="flex flex-row justify-center text-center text-base mb-4">
-                <p>2023 Pedreira Carrascoza LTDA © | </p>
-                <p className="ml-1">Mapa do Site</p>
+                <p>2023 Pedreira Carrascoza LTDA ©</p>
             </div>           
             <div className="flex flex-col text-center md:justify-center md:flex-row text-base mb-4 md:mb-0">
                 <p>Horário de Atendimento: </p>

@@ -19,7 +19,7 @@ export function WebMenu({menuOption, subMenu }) {
                         
         if (target) { 
             setElement(`${target}-dropdown`)
-            }  
+        }  
         
         if(element){
             if (visible){

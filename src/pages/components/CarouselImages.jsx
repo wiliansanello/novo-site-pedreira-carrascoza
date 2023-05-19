@@ -54,7 +54,7 @@ export function CarouselImages(){
       )   
 
     return (
-        <div className="relative top-16 md:top-[4.5rem]">       
+        <div className="relative top-20 md:top-[4.5rem]">       
           <div ref={sliderRef} className="keen-slider">      
              <div className="keen-slider__slide">
               <img src='banner1.jpg'/>

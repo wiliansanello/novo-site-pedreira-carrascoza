@@ -42,7 +42,7 @@ export function Header(){
     function showMobileMenu(){
        
         setElement('web-menu');
-        setVisible(!visible)
+        setVisible(!visible);
 
         if(visible){
             setToggleShow('hidden');
@@ -52,7 +52,7 @@ export function Header(){
         setDisplay('flex')
 
         if(element){
-            document.getElementById(element).style.visibilty = toggleShow;
+            document.getElementById(element).style.visibility = toggleShow;
             document.getElementById(element).style.display = display;
         }
     }
@@ -100,18 +100,18 @@ export function Header(){
     }
 
     return (        
-            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-16 md:h-[4.5rem] bg-slate-200">
+            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-20 md:h-[4.5rem] bg-slate-200">
                 <a href="/">
-                    <img className="z-40 ml-12 md:ml-2 mt-2 w-32 md:w-44" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
+                    <img className="z-40 ml-12 md:ml-2 mt-2 w-36 md:w-44" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
                 </a>                          
 
-                <div className="absolute z-10 top-4 right-8 md:top-10 gap-1 inline-flex md:flex">
+                <div className="absolute z-10 top-10 md:top-8 right-2 md:right-8 gap-1 inline-flex md:flex">
                         <RiInstagramLine  
                             id="instagram"
                             size={24} 
                             alt="Perfis do Instagram da Pedreira Carrascoza" 
                             title="Instagram da Pedreira Carrascoza e do Agrocar"
-                            className="cursor-pointer"
+                            className="cursor-pointer w-9 md:w-7 h-9 md:h-7"
                             onClick={showSocialMediaList}
                         />
                         <BsFacebook 
@@ -119,23 +119,22 @@ export function Header(){
                             size={24} 
                             alt="Perfis do Facebook da Pedreira Carrascoza" 
                             title="Facebook da Pedreira Carrascoza e do Agrocar"
-                            className="cursor-pointer"
+                            className="cursor-pointer w-9 md:w-6 h-9 md:h-6"
                             onClick={showSocialMediaList}
                         />
                         <FaMapMarkerAlt 
                             id="location"
-                            size={24} 
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"
-                            className="cursor-pointer"
+                            className="cursor-pointer w-9 md:w-6 h-9 md:h-6"
                             onClick={showSocialMediaList}    
                         />
                         <MdPhone
                             id="phone"
-                            size={24}
+                            
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"  
-                            className="cursor-pointer" 
+                            className="cursor-pointer w-10 md:w-6 h-10 md:h-6" 
                             onClick={showSocialMediaList}
                         />                
                 </div>
@@ -149,7 +148,7 @@ export function Header(){
                         <nav>
                             <div className="flex flex-col">
                                 <button className="absolute z-10 top-4 left-2 md:hidden" onClick={(showMobileMenu)}>
-                                    <RxHamburgerMenu size={28}/>                              
+                                    <RxHamburgerMenu size={32}/>                              
                                 </button>
 
                                <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
