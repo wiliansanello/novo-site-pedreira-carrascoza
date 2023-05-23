@@ -3,7 +3,7 @@ export function Whatsapp(){
         <div className="z-40">
             <a 
                 className="pt-48" 
-                href="https://api.whatsapp.com/send?phone=551639511710&text=Olá!%20Gostaria%20de%20um%20orçamento" 
+                href="https://api.whatsapp.com/send?phone=551639511710" 
                 target="_blank"
             >
                 <img 
