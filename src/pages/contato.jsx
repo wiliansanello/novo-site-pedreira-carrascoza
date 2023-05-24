@@ -15,7 +15,7 @@ export function Contact() {
 
     async function sendEmail() { 
         try {
-            await api.post('/contato.php', formData);
+            await api.post('/contato', formData);
             alert('Obrigado por enviar uma mensagem! Responderemos o mais breve possível');
 
         } catch(err){    

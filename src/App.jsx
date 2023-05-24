@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-
-import { api } from './lib/axios';
+import { useRef } from 'react';
 
 import './styles/globals.css';
 
@@ -16,30 +14,24 @@ import { Remineralizer } from './pages/remineralizador';
 import { CitiesServed} from './pages/cidades-atendidas';
 import { FindUs } from './pages/encontre-nos';
 import { Contact } from './pages/contato';
-import { useScroll } from 'framer-motion';
-import { ProductModal } from './pages/components/ProductModal';
-import { ProductCard } from './pages/components/ProductCard';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 function App() {
 
-  /*const [productsData, setProductsData] = useState([]);
-
-  useEffect(()=>{        
-    const response = api.get('load-products/')
-        .then((res)=>{console.log(res)})
-        .catch((err)=> {console.log(err)});
-        setProductsData(response.data);
-  },[]);*/
-
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll();
-  console.log(scrollYProgress);
+
+  useMotionValueEvent( scrollYProgress , "change", latest => {
+    console.log("Page scroll:", latest)
+  })
+ 
   
   return (
     <>
       <title>Pedreira Carrascoza: Pedra britada para Ribeirão Preto e região</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="title" content="Pedreira Carrascoza: Pedra britada e areia para Ribeirão Preto e região" />
-          <meta name="description" content="Pedreira Carrascoza: Pedra britada e areia para Ribeirão Preto e região"/>
+          <meta name="title" content="Pedreira Carrascoza: Pedra britada para Ribeirão Preto e região" />
+          <meta name="description" content="Pedreira Carrascoza: Pedra britada para Ribeirão Preto e região"/>
           <link href="favicon.gif" rel="icon" type="image/gif" />
           <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>            
       <Header />
