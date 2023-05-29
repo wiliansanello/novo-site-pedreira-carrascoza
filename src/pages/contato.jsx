@@ -1,36 +1,26 @@
 import { api } from '../lib/axios';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 export function Contact() {
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm();
-    const [formData, setFormData ] = useState({
-        nome: '',
-        cidade: '',
-        telefone: '',
-        email: '',
-        mensagem: ''
-    });
-
+   
     async function sendEmail() { 
         try {
-            await api.post('/contato', formData);
-            alert('Obrigado por enviar uma mensagem! Responderemos o mais breve possível');
+            await api.post('/envia-contato', 
+            {
+                nome: watch.nome,
+                cidade: watch.cidade,
+                telefone: watch.telefone,
+                email: watch.email,
+                mensagem: watch.mensagem
+            });
+            alert('Obrigado por enviar uma mensagem para nós! Responderemos o mais breve possível');
 
         } catch(err){    
-            alert('Houve uma falha no envio da sua mensagem', err);
+            alert(`Houve uma falha no envio da sua mensagem ${err}`);
         }  
-    }
-
-    function getInputData(event){
-        const value = event.target.value
-        const key = event.target.name
-        setFormData(current => ({
-            ...current,
-            [key]: value
-        }));    
-    }
+    }    
 
     return (
         <form className="pt-8" onSubmit={handleSubmit(sendEmail)}>
@@ -44,8 +34,7 @@ export function Contact() {
                     value={watch.nome}
                     type='text' 
                     placeholder='Digite seu nome...' 
-                    className='px-2 my-2 text-black bg-slate-100 w-80 md:w-[40rem] h-10 rounded-md'
-                    onChange={getInputData}                    
+                    className='px-2 my-2 text-black bg-slate-100 w-80 md:w-[40rem] h-10 rounded-md'                    
                 />
                 <p>Cidade</p>
                 <input
@@ -54,7 +43,6 @@ export function Contact() {
                      type='text'
                       placeholder='Digite seu e-mail...' 
                       className='px-2 my-2 text-black bg-slate-100 w-80 md:w-[40rem] h-10 rounded-md'
-                      onChange={getInputData}
                 />
                 <p>Telefone</p>
                 {errors.telefone && <span className='text-orange-400'>Campo obrigatório</span>}
@@ -64,7 +52,6 @@ export function Contact() {
                     type='text' 
                     placeholder='Digite seu telefone...' 
                     className='px-2 my-2 text-black bg-slate-100 w-80 md:w-[40rem] h-10 rounded-md'
-                    onChange={getInputData}
                 />
                 <p>E-mail</p>
                 <input
@@ -73,7 +60,6 @@ export function Contact() {
                     type='text'
                     placeholder='Digite sua mensagem...'
                     className='px-2 my-2  text-black bg-slate-100 w-80 md:w-[40rem] h-10 rounded-md'
-                    onChange={getInputData}
                />
                 <p>Mensagem</p>
                 <textarea 
@@ -81,7 +67,6 @@ export function Contact() {
                     value={watch.mensagem}
                     placeholder='Digite aqui sua mensagem...' 
                     className='px-2 my-2 text-lg text-black bg-slate-100 w-80 md:w-[40rem] h-48 rounded-md required:text-orange-400'
-                    onChange={getInputData}
                 />
                 <button className='bg-black text-white w-80 md:w-[40rem] py-4 my-4 rounded-md text-2xl hover:bg-gray-800'>Enviar</button>
             </div>            
