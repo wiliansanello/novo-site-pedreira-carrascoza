@@ -100,12 +100,12 @@ export function Header(){
     }
 
     return (        
-            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-20 md:h-[4.5rem] bg-slate-200">
+            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-28 md:h-[4.5rem] bg-slate-200">
                 <a href="/">
-                    <img className="z-40 ml-12 md:ml-2 mt-2 w-36 md:w-44" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
+                    <img className="z-40 ml-20 md:ml-12 md:ml-2 mt-2 w-44 md:w-36" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
                 </a>                          
 
-                <div className="absolute z-10 top-10 md:top-8 right-2 md:right-8 gap-1 inline-flex md:flex">
+                <div className="absolute z-10 top-16 md:top-8 right-2 md:right-8 gap-1 inline-flex md:flex">
                         <RiInstagramLine  
                             id="instagram"
                             size={24} 
@@ -147,7 +147,7 @@ export function Header(){
                     <div>            
                         <nav>
                             <div className="flex flex-col">
-                                <button className="absolute z-10 top-4 left-2 md:hidden" onClick={(showMobileMenu)}>
+                                <button className="absolute z-10 top-16 left-2 md:hidden" onClick={(showMobileMenu)}>
                                     <RxHamburgerMenu size={32}/>                              
                                 </button>
 

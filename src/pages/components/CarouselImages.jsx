@@ -54,7 +54,7 @@ export function CarouselImages(){
       )   
 
     return (
-        <div className="relative top-20 md:top-[4.5rem]">       
+        <div className="relative top-36 md:top-[4.5rem]">       
           <div ref={sliderRef} className="keen-slider">      
              <div className="keen-slider__slide">
               <img src='banner1.jpg'/>
@@ -91,7 +91,7 @@ export function CarouselImages(){
           )}
           
           {instanceRef.current && (
-          <div className="hidden md:flex absolute top-[22rem] left-[37rem] space-x-4 cursor-pointer"> {/*top-96 left-[39rem]*/}
+          <div className="hidden md:flex absolute sm:top-[24rem] top-[22rem] sm:left-[42rem] left-[37rem] space-x-4 cursor-pointer"> {/*top-[22rem] left-[39rem]*/}
             {[
               ...Array(instanceRef.current.track.details.slides.length).keys(),
             ].map((idx)=>{
