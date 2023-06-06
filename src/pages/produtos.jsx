@@ -15,7 +15,7 @@ export function Products() {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row sm:mx-28 mx-8"> 
+            <div className="flex flex-col md:flex-row mx-16 md:mx-28"> 
                 <ProductCard
                     title = "Pedrisco 1/4 pol"
                     imageUrl ="/sproduto1.jpg"
