@@ -49,9 +49,13 @@ export function WebMenu({ menuOption }) {
         console.log(positionY)
         window.scroll({
             top: positionY,
-            left: 100,
+            left: 0,
             behavior: "smooth"
         })
+
+        if (element) {
+            document.getElementById(element).style.visibility = 'hidden';
+        }
     }
     
     return (
