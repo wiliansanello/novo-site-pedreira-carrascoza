@@ -14,17 +14,8 @@ import { Remineralizer } from './pages/remineralizador';
 import { CitiesServed} from './pages/cidades-atendidas';
 import { FindUs } from './pages/encontre-nos';
 import { Contact } from './pages/contato';
-import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 function App() {
-
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll();
-
-  useMotionValueEvent( scrollYProgress , "change", latest => {
-    console.log("Page scroll:", latest)
-  })
- 
   
   return (
     <>

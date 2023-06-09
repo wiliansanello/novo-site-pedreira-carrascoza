@@ -4,7 +4,7 @@ import logo from '../../assets/logo-web.svg';
 import { RxHamburgerMenu } from "react-icons/rx"
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { RiInstagramLine} from "react-icons/ri"
-import { BsFacebook, BsSearch } from "react-icons/bs"
+import { BsFacebook } from "react-icons/bs"
 import { MdPhone } from 'react-icons/md'
 
 import { WebMenu } from './WebMenu';
@@ -20,24 +20,6 @@ export function Header(){
     const [display, setDisplay] = useState('none');
     const [contactList, setContactList] = useState([]);
     const [description, setDescription] = useState('');
-
-    function showSearchBar(){
-        setElement("search-input")
-        setVisible(!visible)
-
-        if(visible){
-            setToggleShow('hidden');
-        } else {
-            setToggleShow('visible');
-        }    
-
-        if(element){
-            setDisplay('flex')
-            document.getElementById(element).style.visibilty = toggleShow;
-            document.getElementById(element).style.display = display;
-            setElement("")
-        }
-    }
 
     function showMobileMenu(){
        
@@ -97,21 +79,21 @@ export function Header(){
             document.getElementById('popup').style.visibility = toggleShow;
             document.getElementById('popup').style.display = display;            
         }
-    }
+    }    
 
     return (        
-            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-28 md:h-[4.5rem] bg-slate-200">
+            <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-16 md:h-[4.5rem] bg-slate-200">
                 <a href="/">
-                    <img className="z-40 ml-20 md:ml-12 md:ml-2 mt-2 w-44 md:w-36" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
+                    <img className="z-40 ml-12 md:ml-2 mt-2 w-36" src={logo} alt="Pedreira Carrascoza" title="Pedreira Carrascoza" />
                 </a>                          
 
-                <div className="absolute z-10 top-16 md:top-8 right-2 md:right-8 gap-1 inline-flex md:flex">
+                <div className="absolute z-10 top-6 md:top-8 right-2 md:right-8 gap-1 inline-flex md:flex">
                         <RiInstagramLine  
                             id="instagram"
                             size={24} 
                             alt="Perfis do Instagram da Pedreira Carrascoza" 
                             title="Instagram da Pedreira Carrascoza e do Agrocar"
-                            className="cursor-pointer w-9 md:w-7 h-9 md:h-7"
+                            className="cursor-pointer w-7 h-7"
                             onClick={showSocialMediaList}
                         />
                         <BsFacebook 
@@ -119,14 +101,14 @@ export function Header(){
                             size={24} 
                             alt="Perfis do Facebook da Pedreira Carrascoza" 
                             title="Facebook da Pedreira Carrascoza e do Agrocar"
-                            className="cursor-pointer w-9 md:w-6 h-9 md:h-6"
+                            className="cursor-pointer w-6 h-6"
                             onClick={showSocialMediaList}
                         />
                         <FaMapMarkerAlt 
                             id="location"
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"
-                            className="cursor-pointer w-9 md:w-6 h-9 md:h-6"
+                            className="cursor-pointer w-6 h-6"
                             onClick={showSocialMediaList}    
                         />
                         <MdPhone
@@ -134,7 +116,7 @@ export function Header(){
                             
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"  
-                            className="cursor-pointer w-10 md:w-6 h-10 md:h-6" 
+                            className="cursor-pointer w-6 h-6" 
                             onClick={showSocialMediaList}
                         />                
                 </div>
@@ -147,57 +129,72 @@ export function Header(){
                     <div>            
                         <nav>
                             <div className="flex flex-col">
-                                <button className="absolute z-10 top-16 left-2 md:hidden" onClick={(showMobileMenu)}>
-                                    <RxHamburgerMenu size={32}/>                              
+                                <button className="absolute z-10 top-6 left-2 md:hidden" onClick={(showMobileMenu)}>
+                                    <RxHamburgerMenu size={28}/>                              
                                 </button>
 
                                <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
-                                <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-xl md:text-base cursor-pointer"> 
+                                <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-base cursor-pointer"> 
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
                                         <WebMenu menuOption={ {url:"#", description: 'Início'} } />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu 
-                                            menuOption={ {url : '#', description: 'Quem Somos', id:'whoarewe'} }
-                                            subMenu={ 
-                                                [
-                                                    { url: '#sobre-nos', description: 'Sobre nós' },
-                                                    { url: '#missao', description: 'Missão' },
-                                                    { url: '#qualidade', description: 'Qualidade'}
-                                                ] 
+                                            menuOption={ 
+                                                {
+                                                    description: 'Quem Somos', 
+                                                    id:'whoarewe', 
+                                                    subMenu:
+                                                        [
+                                                            { description: 'Sobre nós' , positionY: 425 },                                                            
+                                                            { description: 'Qualidade', positionY: 840 },
+                                                            { description: 'Missão', positionY: 1440 }
+                                                        ]                                                      
+                                                }   
+                                            
                                             }
                                         />
                                     </li>                                  
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
-                                            menuOption={{url: '/#produtos', description: 'Produtos', id:'products'}}
-                                            subMenu={
-                                                [
-                                                    {url: '/#rachao', description: 'Rachão'},
-                                                    {url: '/#brita', description: 'Brita'},
-                                                    {url: '/#pedrisco', description: 'Pedrisco'},
-                                                    {url: '/#bica', description: 'Bica'},
-                                                    {url: '/#areia', description: 'Areia'}
-                                                ]
-                                            }
+                                            menuOption={
+                                                {
+                                                    description: 'Produtos', 
+                                                    id:'products',
+                                                    subMenu:
+                                                    [
+                                                        { description: 'Rachão', positionY: 1620 },
+                                                        { description: 'Brita'},
+                                                        { description: 'Pedrisco'},
+                                                        { description: 'Bica'},
+                                                        { description: 'Areia'}
+                                                    ]    
+                                                }
+                                            }                                            
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{url:'/#remineralizador', description: 'Remineralizador'}} />
+                                        <WebMenu menuOption={{url:'/remineralizador', description: 'Remineralizador', positionY: 2300}} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
-                                            menuOption={{url:'#', description:'Localização', id:'location'}}
-                                            subMenu={
-                                                [
-                                                    {url:'/#cidades-atendidas', description:'Cidades Atendidas'},
-                                                    {url:'/#encontre-nos', description:'Encontre-nos'}
-                                                ]
-                                            }
+                                            menuOption={
+                                                {
+                                                    url:'#', 
+                                                    description:'Localização', 
+                                                    id:'location',
+                                                    subMenu:
+                                                    [
+                                                        { description:'Cidades Atendidas', positionY: 4825},
+                                                        { description:'Encontre-nos', positionY: 5000}
+                                                    ]
+                                                }
+                                            }                                            
+                                            
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu  menuOption={{url:'/#contato', description:'Contato'}}/>  
+                                        <WebMenu  menuOption={{ description:'Contato', positionY: 5720 }}/>  
                                     </li>                        
                                 </ul>
                                 </div>
@@ -209,11 +206,7 @@ export function Header(){
                             type="text" 
                             id="search-input" 
                             placeholder="Procure por" 
-                        />
-                        {/*<button id="search-input" className="-left-24 border-none" onClick={showSearchBar}>
-                            <BsSearch size={24} alt="Pesquise em nosso site" title="Pesquise em nosso site" />
-                                        </button>*/}                    
-                                
+                        />                    
                     </div>                                   
                 </div>
             </header>                   

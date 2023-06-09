@@ -45,7 +45,7 @@ export function Products() {
                     density = "1.302 ton/m³"
                 />                                
             </div>
-            <div className="flex sm:mx-28 mx-8">
+            <div className="flex mx-16 md:mx-28">
                 <ProductCard 
                     title = "Pedra 1/2"
                     imageUrl ="/sproduto1.jpg"

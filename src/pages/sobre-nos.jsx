@@ -1,7 +1,7 @@
 export function AboutUs() {
     return (
         <article>
-            <h1 className="pt-28 md:pt-24 text-4xl text-center">Quem somos</h1>
+            <h1 className="pt-20 md:pt-24 text-4xl text-center">Quem somos</h1>
             <div className="text-base md:text-lg px-6 md:px-12">
                 <p className="pt-8 pb-4 md:pb-8 indent-8 text-justify">Fundada em 1978, a Pedreira Carrascoza tem suas atenções voltadas para a qualidade de seus produtos, respeito aos clientes, à saúde e segurança de seus colaboradores e ao meio ambiente.</p>
                 <p className="indent-8 text-justify">Com modernos equipamentos instalados para produzir até 150.000 toneladas por mês, estamos preparados e geograficamente bem localizados para atender as mais diversas e importantes obras e empresas da construção civil, oferecendo pedras britadas e areias de qualidade com confiança e bom atendimento.</p>
