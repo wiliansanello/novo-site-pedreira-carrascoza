@@ -37,11 +37,7 @@ export function WebMenu({ menuOption }) {
             document.getElementById(element).style.display = display;
             document.getElementById(element).style.flexDirection = direction;  
         } 
-        
-        if (menuOption.positionY){
-            scrollToSelectedOption(menuOption.positionY);
-        }
-        
+    
     }
 
     function scrollToSelectedOption(positionY){
@@ -67,7 +63,7 @@ export function WebMenu({ menuOption }) {
                 className="font-bold no-underline"
                 onMouseEnter={setVisibilityMenu} 
                 onMouseLeave={setVisibilityMenu}
-                onClick={()=>{setVisibilityMenu}}                
+                onClick={menuOption.hasChild ? setVisibilityMenu : ()=>{scrollToSelectedOption(menuOption.positionY)}}                
             >
                 {menuOption.description}
             </a>
