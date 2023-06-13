@@ -4,54 +4,34 @@ import { RxChevronDown } from "react-icons/rx"
 
 export function WebMenu({ menuOption }) {
 
-    const [target, setTarget] = useState('');
     const [element, setElement] = useState('');
-    const [visible, setVisible] = useState(false);
-    const [toggleShow, setToggleShow] = useState('hidden');
-    const [display, setDisplay] = useState('none');
-    const [direction, setDirection] = useState('row');
+    const [toggleShow, setToggleShow] = useState('invisible');
 
     function setVisibilityMenu(){
-        
-        setTarget(menuOption.id);
-        setVisible(!visible);
-                        
-        if (target) { 
-            setElement(`${target}-dropdown`)
-        }  
-        
-        if(element){
-            if (visible){
-                setToggleShow('hidden');
-                setDisplay('none');
-                setDirection('row');
+        let targetElement = `${menuOption.id}-dropdown`;
+        setElement(targetElement);
+      
+        if(targetElement){
+            
+            if (toggleShow === 'invisible') {
+                setToggleShow('visible')
             } else {
-                setToggleShow('visible');
-                setDisplay('flex');
-                setDirection('column'); 
+                setToggleShow('invisible')
             }
+            
         }
-        
-        if(element){
-            document.getElementById(element).style.visibility = toggleShow;
-            document.getElementById(element).style.display = display;
-            document.getElementById(element).style.flexDirection = direction;  
-        } 
-    
     }
 
     function scrollToSelectedOption(positionY){
 
-        console.log(positionY)
         window.scroll({
             top: positionY,
             left: 0,
             behavior: "smooth"
         })
 
-        if (element) {
-            document.getElementById(element).style.visibility = 'hidden';
-        }
+        setToggleShow('invisible');
+        
     }
     
     return (
@@ -78,7 +58,7 @@ export function WebMenu({ menuOption }) {
                 <ul 
                     id={element}
                     onMouseLeave={setVisibilityMenu}
-                    className="hidden md:absolute z-40 md:mt-6 -ml-4 md:text-center w-screen md:w-40 bg-slate-200 shadow-lg text-black sm:capitalize"
+                    className={`${toggleShow} md:absolute z-40 md:mt-6 -ml-4 md:text-center w-screen md:w-40 bg-slate-200 shadow-lg text-black sm:capitalize`}
                 >
                 
                     {menuOption.subMenu.map((item, i) => {                                     

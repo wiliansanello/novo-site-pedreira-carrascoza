@@ -16,31 +16,30 @@ export function Header(){
     const [target, setTarget] = useState('')
     const [element, setElement] = useState('');
     const [visible, setVisible] = useState(false);
-    const [toggleShow, setToggleShow] = useState('hidden')
+    const [toggleShowMenuItem, setToggleShowMenuItem] = useState('invisible');
+    const [toggleShowPopup, setToggleShowPopup] = useState('invisible');
     const [display, setDisplay] = useState('none');
     const [contactList, setContactList] = useState([]);
     const [description, setDescription] = useState('');
+
+    let contactData = [];
+    let socialElementTitle = ''
 
     function showMobileMenu(){
        
         setElement('web-menu');
         setVisible(!visible);
 
-        if(visible){
-            setToggleShow('hidden');
+        if(toggleShowMenuItem === 'visible'){
+            setToggleShowMenuItem('invisible');
         } else {
-            setToggleShow('visible');
+            setToggleShowMenuItem('visible');
         }
-        setDisplay('flex')
 
-        if(element){
-            document.getElementById(element).style.visibility = toggleShow;
-            document.getElementById(element).style.display = display;
-        }
     }
 
     function showSocialMediaList(e){
-
+        
         if (target !== '') {
             setTarget('');
         }
@@ -48,26 +47,54 @@ export function Header(){
         setTarget(e.target.id);
         setVisible(!visible);
         
-        if(visible){
-            setToggleShow('hidden');
+        if(toggleShowPopup === 'invisible'){
+            setToggleShowPopup('visible');
         } else {
-            setToggleShow('visible');
+            setToggleShowPopup('invisible');
         }
 
         if (target === "instagram") {
 
-            setContactList([
+        contactData = [
                 {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
                 {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
-                ]);
-                setDescription('Clique para seguir');
+            ];
+        socialElementTitle = 'Clique para seguir'
 
         } else if(target === "facebook") {
 
-            setContactList([{contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}]);
+            contactData = [
+                {contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}
+            ];
+        socialElementTitle = 'Clique para curtir a página';
+
+        } else if (target === "phone") {
+
+            contactData = [
+                {contact:"(16)3951-1710", link:"tel:+1639511710"}
+            ];
+        socialElementTitle = 'Ligue para a Pedreira Carrascoza';
+
+        }
+
+        setContactList(contactData);
+        setDescription(socialElementTitle);
+
+        
+        /*
+       
+
+            contactData = [
+                {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
+                {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
+            ];
+
+        
+
+            contactList=[{contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}]);
             setDescription('Clique para curtir a página');
 
-       } else if (target === "phone") {
+       
 
             setContactList([{contact:"(16)3951-1710", link:"tel:+1639511710"}]);
             setDescription('Ligue para a Pedreira Carrascoza');
@@ -78,7 +105,8 @@ export function Header(){
             setDisplay("flex")
             document.getElementById('popup').style.visibility = toggleShow;
             document.getElementById('popup').style.display = display;            
-        }
+        }*/
+        
     }    
 
     return (        
@@ -121,7 +149,7 @@ export function Header(){
                         />                
                 </div>
 
-                <div id="popup" className="hidden">
+                <div id="popup" className={toggleShowPopup}>
                     {(target === 'location') && <Address />}
                     {(target !== 'location') && <Contacts contactsList={contactList} title={description} />}                    
                 </div>
@@ -133,7 +161,7 @@ export function Header(){
                                     <RxHamburgerMenu size={28}/>                              
                                 </button>
 
-                               <div id="web-menu" className="hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4">
+                               <div id="web-menu" className={`hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4`}>
                                 <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-base cursor-pointer"> 
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
                                         <WebMenu menuOption={ { hasChild: false, description: 'Início', positionY: 1} } />

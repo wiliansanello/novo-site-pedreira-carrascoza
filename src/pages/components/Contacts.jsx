@@ -1,4 +1,6 @@
 export function Contacts(props){
+
+    console.log(props.contactsList)
     return (
         <div>
             <div className="flex flex-col p-4 fixed right-1 top-16  bg-slate-200">

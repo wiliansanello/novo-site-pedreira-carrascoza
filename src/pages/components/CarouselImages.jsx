@@ -83,7 +83,7 @@ export function CarouselImages(){
               />
               <AiOutlineRight
                 size={72}
-                className="cursor-pointer text-transparent hover:text-orange-400 absolute left-[76rem]" // md:left-[87rem] lg:left-[97rem]
+                className="cursor-pointer text-transparent hover:text-orange-400 absolute left-[87rem]" // md:left-[87rem] lg:left-[97rem]
                 onClick={(e) => e.stopPropagation() || instanceRef.current?.next()}
                 disabled={currentSlide === instanceRef.current.track.details.slides.length - 1} 
               />       
