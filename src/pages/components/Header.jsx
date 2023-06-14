@@ -69,8 +69,7 @@ export function Header(){
                             onClick={()=>showContact('address')}    
                         />
                         <MdPhone
-                            id="phone"
-                            
+                            id="phone"                            
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"  
                             className="cursor-pointer w-6 h-6" 

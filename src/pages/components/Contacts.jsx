@@ -67,7 +67,7 @@ export function Contacts(props){
                                     <p>Cravinhos/SP</p>
                                 </div>
                         }
-                        <a className="no-underline hover:text-orange-400" 
+                        <a className="no-underline hover:text-orange-400 cursor-pointer" 
                             href={item.link} 
                             target="_blank" 
                             title={elementTitle}

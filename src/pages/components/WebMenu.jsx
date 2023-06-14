@@ -5,7 +5,7 @@ import { RxChevronDown } from "react-icons/rx"
 export function WebMenu({ menuOption }) {
 
     const [element, setElement] = useState('');
-    const [toggleShow, setToggleShow] = useState('invisible');
+    const [toggleShow, setToggleShow] = useState('hidden');
 
     function setVisibilityMenu(){
         let targetElement = `${menuOption.id}-dropdown`;
@@ -13,10 +13,10 @@ export function WebMenu({ menuOption }) {
       
         if(targetElement){
             
-            if (toggleShow === 'invisible') {
+            if (toggleShow === 'hidden') {
                 setToggleShow('visible')
             } else {
-                setToggleShow('invisible')
+                setToggleShow('hidden')
             }
             
         }
