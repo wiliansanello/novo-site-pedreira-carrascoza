@@ -9,26 +9,16 @@ import { MdPhone } from 'react-icons/md'
 
 import { WebMenu } from './WebMenu';
 import { Contacts } from "./Contacts";
-import { Address } from "./Address";
 
 export function Header(){ 
 
-    const [target, setTarget] = useState('')
-    const [element, setElement] = useState('');
-    const [visible, setVisible] = useState(false);
     const [toggleShowMenuItem, setToggleShowMenuItem] = useState('invisible');
     const [toggleShowPopup, setToggleShowPopup] = useState('invisible');
-    const [display, setDisplay] = useState('none');
-    const [contactList, setContactList] = useState([]);
-    const [description, setDescription] = useState('');
-
-    let contactData = [];
-    let socialElementTitle = ''
+    const [selectedContact, setSelectedContact] = useState('')
 
     function showMobileMenu(){
        
-        setElement('web-menu');
-        setVisible(!visible);
+
 
         if(toggleShowMenuItem === 'visible'){
             setToggleShowMenuItem('invisible');
@@ -37,77 +27,17 @@ export function Header(){
         }
 
     }
-
-    function showSocialMediaList(e){
         
-        if (target !== '') {
-            setTarget('');
-        }
+    function showContact(contact){
+        setSelectedContact(contact);
+        console.log(contact)
 
-        setTarget(e.target.id);
-        setVisible(!visible);
-        
         if(toggleShowPopup === 'invisible'){
             setToggleShowPopup('visible');
         } else {
             setToggleShowPopup('invisible');
         }
-
-        if (target === "instagram") {
-
-        contactData = [
-                {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
-                {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
-            ];
-        socialElementTitle = 'Clique para seguir'
-
-        } else if(target === "facebook") {
-
-            contactData = [
-                {contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}
-            ];
-        socialElementTitle = 'Clique para curtir a página';
-
-        } else if (target === "phone") {
-
-            contactData = [
-                {contact:"(16)3951-1710", link:"tel:+1639511710"}
-            ];
-        socialElementTitle = 'Ligue para a Pedreira Carrascoza';
-
-        }
-
-        setContactList(contactData);
-        setDescription(socialElementTitle);
-
-        
-        /*
-       
-
-            contactData = [
-                {contact: "@pedreiracarrascoza", link:"https://www.instagram.com/pedreiracarrascoza"},
-                {contact: "@agrocar.remineralizador", link:"https://www.instagram.com/agrocar.remineralizador"}
-            ];
-
-        
-
-            contactList=[{contact: "pedreiracarrascoza", link:"https://www.facebook.com/pedreiracarrascoza"}]);
-            setDescription('Clique para curtir a página');
-
-       
-
-            setContactList([{contact:"(16)3951-1710", link:"tel:+1639511710"}]);
-            setDescription('Ligue para a Pedreira Carrascoza');
-
-        }
-                
-        if(contactList){
-            setDisplay("flex")
-            document.getElementById('popup').style.visibility = toggleShow;
-            document.getElementById('popup').style.display = display;            
-        }*/
-        
-    }    
+    }
 
     return (        
             <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-16 md:h-[4.5rem] bg-slate-200">
@@ -122,7 +52,7 @@ export function Header(){
                             alt="Perfis do Instagram da Pedreira Carrascoza" 
                             title="Instagram da Pedreira Carrascoza e do Agrocar"
                             className="cursor-pointer w-7 h-7"
-                            onClick={showSocialMediaList}
+                            onClick={()=>showContact('instagram')}
                         />
                         <BsFacebook 
                             id="facebook"
@@ -130,14 +60,14 @@ export function Header(){
                             alt="Perfis do Facebook da Pedreira Carrascoza" 
                             title="Facebook da Pedreira Carrascoza e do Agrocar"
                             className="cursor-pointer w-6 h-6"
-                            onClick={showSocialMediaList}
+                            onClick={()=>showContact('facebook')}
                         />
                         <FaMapMarkerAlt 
                             id="location"
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"
                             className="cursor-pointer w-6 h-6"
-                            onClick={showSocialMediaList}    
+                            onClick={()=>showContact('address')}    
                         />
                         <MdPhone
                             id="phone"
@@ -145,15 +75,14 @@ export function Header(){
                             alt="Endereço da Pedreira Carrascoza"
                             title="Endereço da Pedreira Carrascoza"  
                             className="cursor-pointer w-6 h-6" 
-                            onClick={showSocialMediaList}
+                            onClick={()=>showContact('phone')}
                         />                
                 </div>
 
-                <div id="popup" className={toggleShowPopup}>
-                    {(target === 'location') && <Address />}
-                    {(target !== 'location') && <Contacts contactsList={contactList} title={description} />}                    
-                </div>
-                
+                <div id='popup' className={`${toggleShowPopup}`}>
+                    <Contacts target={selectedContact} />                  
+                </div>                  
+
                     <div>            
                         <nav>
                             <div className="flex flex-col">
