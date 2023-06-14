@@ -16,8 +16,7 @@ export function Header(){
     const [toggleShowPopup, setToggleShowPopup] = useState('invisible');
     const [selectedContact, setSelectedContact] = useState('')
 
-    function showMobileMenu(){
-       
+    function showMobileMenu(){      
 
 
         if(toggleShowMenuItem === 'visible'){
@@ -86,11 +85,11 @@ export function Header(){
                     <div>            
                         <nav>
                             <div className="flex flex-col">
-                                <button className="absolute z-10 top-6 left-2 md:hidden" onClick={(showMobileMenu)}>
+                                <button className={`absolute z-10 top-6 left-2 md:invisible`} onClick={(showMobileMenu)}>
                                     <RxHamburgerMenu size={28}/>                              
                                 </button>
 
-                               <div id="web-menu" className={`hidden md:flex absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4`}>
+                               <div id="web-menu" className={`${toggleShowMenuItem} md:visible absolute md:mt-8 md:left-56 bg-slate-200 md:p-0 p-4`}>
                                 <ul className="flex flex-col md:flex-row list-none uppercase sm:w-screen text-base cursor-pointer"> 
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">                               
                                         <WebMenu menuOption={ { hasChild: false, description: 'Início', positionY: 1} } />
