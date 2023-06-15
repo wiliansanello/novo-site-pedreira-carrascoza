@@ -43,8 +43,7 @@ export function Products() {
                     summary = "Bica"
                     description = "Bica solo pode ser utilizada tanto para paisagismo quanto para construção civil"
                     density = "1.302 ton/m³"
-                />                                
-            
+                />           
                 <ProductCard 
                     title = "Pedra 1/2"
                     imageUrl ="/sproduto1.jpg"
