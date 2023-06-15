@@ -7,7 +7,7 @@ export function WebMenu({ menuOption }) {
     const [element, setElement] = useState('');
     const [toggleShow, setToggleShow] = useState('hidden');
 
-    function setVisibilityMenu(){
+    function setVisibilityItem(){
         let targetElement = `${menuOption.id}-dropdown`;
         setElement(targetElement);
       
@@ -22,6 +22,7 @@ export function WebMenu({ menuOption }) {
         }
     }
 
+  
     function scrollToSelectedOption(positionY){
 
         window.scroll({
@@ -41,9 +42,9 @@ export function WebMenu({ menuOption }) {
             <a 
                 id={menuOption.id} 
                 className="font-bold no-underline"
-                onMouseEnter={setVisibilityMenu} 
-                onMouseLeave={setVisibilityMenu}
-                onClick={menuOption.hasChild ? setVisibilityMenu : ()=>{scrollToSelectedOption(menuOption.positionY)}}                
+                onMouseEnter={setVisibilityItem} 
+                onMouseLeave={setVisibilityItem}
+                onClick={menuOption.hasChild ? setVisibilityItem : ()=>{scrollToSelectedOption(menuOption.positionY)}}                
             >
                 {menuOption.description}
             </a>
@@ -57,7 +58,7 @@ export function WebMenu({ menuOption }) {
             {menuOption.subMenu && (
                 <ul 
                     id={element}
-                    onMouseLeave={setVisibilityMenu}
+                    onMouseLeave={setVisibilityItem}
                     className={`${toggleShow} md:absolute z-40 md:mt-6 -ml-4 md:text-center w-screen md:w-40 bg-slate-200 shadow-lg text-black sm:capitalize`}
                 >
                 

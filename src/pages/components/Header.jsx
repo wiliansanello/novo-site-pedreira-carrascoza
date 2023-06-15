@@ -24,7 +24,7 @@ export function Header(){
         } else {
             setToggleShowMenuItem('visible');
         }
-
+        console.log(setToggleShowMenuItem)
     }
         
     function showContact(contact){
