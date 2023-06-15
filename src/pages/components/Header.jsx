@@ -102,7 +102,7 @@ export function Header(){
                                                     hasChild: true, 
                                                     subMenu:
                                                         [
-                                                            { description: 'Sobre nós' , positionY: 425 },                                                            
+                                                            { description: 'Sobre nós' , positionY: ()=> screen.width >= 1200? 425 : 600 },                                                            
                                                             { description: 'Qualidade', positionY: 840 },
                                                             { description: 'Missão', positionY: 1440 }
                                                         ]                                                      
