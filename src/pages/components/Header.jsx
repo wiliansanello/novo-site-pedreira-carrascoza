@@ -38,6 +38,17 @@ export function Header(){
         }
     }
 
+    function getPositionY(positionBiggerScreen, positionLowerScreen){
+        let finalPosition = 0;
+        if (screen.width >= 1200){
+            finalPosition = positionBiggerScreen
+        } else {
+            finalPosition = positionLowerScreen
+        }
+        
+        return finalPosition
+    }
+
     return (        
             <header className="md:flex fixed z-10 px-1 md:px-4 md:py-1 w-full md:w-screen h-16 md:h-[4.5rem] bg-slate-200">
                 <a href="/">
@@ -102,7 +113,7 @@ export function Header(){
                                                     hasChild: true, 
                                                     subMenu:
                                                         [
-                                                            { description: 'Sobre nós' , positionY: ()=> screen.width >= 1200? 425 : 200 },                                                            
+                                                            { description: 'Sobre nós' , positionY: getPositionY(425,200) },                                                            
                                                             { description: 'Qualidade', positionY: 840 },
                                                             { description: 'Missão', positionY: 1440 }
                                                         ]                                                      
