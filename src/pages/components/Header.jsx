@@ -57,7 +57,7 @@ export function Header(){
                             id="facebook"
                             size={24} 
                             alt="Perfis do Facebook da Pedreira Carrascoza" 
-                            title="Facebook da Pedreira Carrascoza e do Agrocar"
+                            title="Facebook da Pedreira Carrascoza"
                             className="cursor-pointer w-6 h-6"
                             onClick={()=>showContact('facebook')}
                         />
@@ -70,8 +70,8 @@ export function Header(){
                         />
                         <MdPhone
                             id="phone"                            
-                            alt="Endereço da Pedreira Carrascoza"
-                            title="Endereço da Pedreira Carrascoza"  
+                            alt="Telefone da Pedreira Carrascoza"
+                            title="Telefone da Pedreira Carrascoza"  
                             className="cursor-pointer w-6 h-6" 
                             onClick={()=>showContact('phone')}
                         />                
@@ -117,15 +117,16 @@ export function Header(){
                                                 {
                                                     description: 'Produtos', 
                                                     id:'products',
-                                                    hasChild: true,
-                                                    subMenu:
+                                                    hasChild: false,
+                                                    positionY: 1620
+                                                    /*subMenu:
                                                     [
-                                                        { description: 'Rachão', positionY: 1620 },
+                                                        { description: 'Rachão',  },
                                                         { description: 'Brita'},
                                                         { description: 'Pedrisco'},
                                                         { description: 'Bica'},
                                                         { description: 'Areia'}
-                                                    ]    
+                                                    ]*/    
                                                 }
                                             }                                            
                                         />

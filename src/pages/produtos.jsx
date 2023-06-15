@@ -15,7 +15,7 @@ export function Products() {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row mx-8 md:mx-28 my-8 md:my-0"> 
+            <div className="grid md:grid-cols-4 mx-8 md:mx-28 my-8 md:my-0"> 
                 <ProductCard
                     title = "Pedrisco 1/4 pol"
                     imageUrl ="/sproduto1.jpg"
@@ -44,8 +44,7 @@ export function Products() {
                     description = "Bica solo pode ser utilizada tanto para paisagismo quanto para construção civil"
                     density = "1.302 ton/m³"
                 />                                
-            </div>
-            <div className="flex mx-8 md:mx-28">
+            
                 <ProductCard 
                     title = "Pedra 1/2"
                     imageUrl ="/sproduto1.jpg"
