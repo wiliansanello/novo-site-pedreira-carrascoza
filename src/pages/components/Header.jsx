@@ -11,6 +11,7 @@ import { getPositionY } from "../../utils/getPositionY";
 
 import { WebMenu } from './WebMenu';
 import { Contacts } from "./Contacts";
+import { changeVisibility } from "../../utils/changeVisibility";
 
 export function Header(){ 
 
@@ -30,13 +31,13 @@ export function Header(){
     }
         
     function showContact(contact){
+        
+        let toggle = ''
         setSelectedContact(contact);
+        
+        toggle = changeVisibility(toggleShowPopup)
 
-        if(toggleShowPopup === 'invisible'){
-            setToggleShowPopup('visible');
-        } else {
-            setToggleShowPopup('invisible');
-        }
+        console.log(toggle)
     }
 
     return (        

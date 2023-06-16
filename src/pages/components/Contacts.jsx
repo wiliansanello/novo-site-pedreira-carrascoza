@@ -1,23 +1,21 @@
-import { useState } from "react";
-
 import { getPositionY } from "../../utils/getPositionY";
 import { scrollToSelectedOption } from "../../utils/scrollToSelectedOption";
+import { changeVisibility } from "../../utils/changeVisibility";
 
 export function Contacts(props){
 
     let contactData = [];
     let elementTitle = "";
     let contactList = [];
-    let visibility = "invisible"
+    let toggle = 'invisible';
 
-    /*function showLink () {
+    function showLink() {
         if (toggleContactLink === 'visible'){
             setToggleContactLink('invisible');
         } else {
             setToggleContactLink('visible');
         }
-        console.log(toggleContactLink)
-    }*/
+    }
 
     function selectSocialMedia(){   
 
@@ -62,15 +60,14 @@ export function Contacts(props){
         return contactData;
     }   
 
-    visibility = props.visibility;
     contactList = selectSocialMedia();
-   
+    
     return (
         <div>
-            <div className={`${visibility} flex flex-col p-4 fixed right-1 top-16  bg-slate-200`}>
+            <div className={`${toggle} flex flex-col p-4 fixed right-1 top-16  bg-slate-200`}>
             {contactList.map((item,i) => {
                 return (
-                    <div key={i} className={"z-10"}>
+                    <div key={i} className='z-10'>
                         {
                             props.target === 'address' && 
                                 <div>
