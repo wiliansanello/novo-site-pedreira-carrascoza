@@ -114,8 +114,8 @@ export function Header(){
                                                     subMenu:
                                                         [
                                                             { description: 'Sobre nós' , positionY: getPositionY(425,110) },                                                            
-                                                            { description: 'Qualidade', positionY: 840 },
-                                                            { description: 'Missão', positionY: 1440 }
+                                                            { description: 'Qualidade', positionY: getPositionY(840,525) },
+                                                            { description: 'Missão', positionY: getPositionY(1440,1125) }
                                                         ]                                                      
                                                 }   
                                             
