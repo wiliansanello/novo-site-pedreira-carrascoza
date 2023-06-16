@@ -16,8 +16,6 @@ import { FindUs } from './pages/encontre-nos';
 import { Contact } from './pages/contato';
 
 function App() {
-
-  alert(screen.width)
   
   return (
     <>

@@ -113,7 +113,7 @@ export function Header(){
                                                     hasChild: true, 
                                                     subMenu:
                                                         [
-                                                            { description: 'Sobre nós' , positionY: getPositionY(425,200) },                                                            
+                                                            { description: 'Sobre nós' , positionY: getPositionY(425,175) },                                                            
                                                             { description: 'Qualidade', positionY: 840 },
                                                             { description: 'Missão', positionY: 1440 }
                                                         ]                                                      
