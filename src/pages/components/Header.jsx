@@ -115,7 +115,7 @@ export function Header(){
                                                         [
                                                             { description: 'Sobre nós' , positionY: getPositionY(425,110) },                                                            
                                                             { description: 'Qualidade', positionY: getPositionY(840,960) },
-                                                            { description: 'Missão', positionY: getPositionY(1440,2525) }
+                                                            { description: 'Missão', positionY: getPositionY(1440,2325) }
                                                         ]                                                      
                                                 }   
                                             
@@ -129,21 +129,13 @@ export function Header(){
                                                     description: 'Produtos', 
                                                     id:'products',
                                                     hasChild: false,
-                                                    positionY: 1620
-                                                    /*subMenu:
-                                                    [
-                                                        { description: 'Rachão',  },
-                                                        { description: 'Brita'},
-                                                        { description: 'Pedrisco'},
-                                                        { description: 'Bica'},
-                                                        { description: 'Areia'}
-                                                    ]*/    
+                                                    positionY: getPositionY(1620, 2500)
                                                 }
                                             }                                            
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: 2300 }} />
+                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 3300) }} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
@@ -155,7 +147,7 @@ export function Header(){
                                                     hasChild: true,
                                                     subMenu:
                                                     [
-                                                        { description:'Cidades Atendidas', positionY: 4825},
+                                                        { description:'Cidades Atendidas', positionY: getPositionY(4825,4000)},
                                                         { description:'Encontre-nos', positionY: 5000}
                                                     ]
                                                 }
