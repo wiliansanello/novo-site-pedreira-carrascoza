@@ -126,7 +126,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4150) }} />
+                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4000) }} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
@@ -138,7 +138,7 @@ export function Header(){
                                                     hasChild: true,
                                                     subMenu:
                                                     [
-                                                        { description:'Cidades Atendidas', positionY: getPositionY(4825,5300)},
+                                                        { description:'Cidades Atendidas', positionY: getPositionY(4825,5350)},
                                                         { description:'Encontre-nos', positionY: getPositionY(5000,5450)}
                                                     ]
                                                 }
@@ -147,7 +147,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6300) }}/>  
+                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6200) }}/>  
                                     </li>                        
                                 </ul>
                                 </div>
