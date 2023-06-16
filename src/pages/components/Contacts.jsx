@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { getPositionY } from "../../utils/getPositionY";
 
 export function Contacts(props){
 
@@ -33,7 +33,7 @@ export function Contacts(props){
                     contact: 'Ver mapa', 
                     position:()=>{
                         window.scroll({
-                            top: 5000,
+                            top: getPositionY(5000,5450),
                             left: 0,
                             behavior: 'smooth' 
                         })

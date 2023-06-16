@@ -7,6 +7,8 @@ import { RiInstagramLine} from "react-icons/ri"
 import { BsFacebook } from "react-icons/bs"
 import { MdPhone } from 'react-icons/md'
 
+import { getPositionY } from "../../utils/getPositionY";
+
 import { WebMenu } from './WebMenu';
 import { Contacts } from "./Contacts";
 
@@ -36,17 +38,6 @@ export function Header(){
         } else {
             setToggleShowPopup('invisible');
         }
-    }
-
-    function getPositionY(positionBiggerScreen, positionLowerScreen){
-        let finalPosition = 0;
-        if (screen.width >= 1200){
-            finalPosition = positionBiggerScreen
-        } else {
-            finalPosition = positionLowerScreen
-        }
-        
-        return finalPosition
     }
 
     return (        
@@ -135,7 +126,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4350) }} />
+                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4150) }} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
@@ -147,8 +138,8 @@ export function Header(){
                                                     hasChild: true,
                                                     subMenu:
                                                     [
-                                                        { description:'Cidades Atendidas', positionY: getPositionY(4825,5200)},
-                                                        { description:'Encontre-nos', positionY: getPositionY(5000,5500)}
+                                                        { description:'Cidades Atendidas', positionY: getPositionY(4825,5300)},
+                                                        { description:'Encontre-nos', positionY: getPositionY(5000,5450)}
                                                     ]
                                                 }
                                             }                                            
@@ -156,7 +147,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6500) }}/>  
+                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6300) }}/>  
                                     </li>                        
                                 </ul>
                                 </div>
