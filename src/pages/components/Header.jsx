@@ -31,7 +31,6 @@ export function Header(){
         
     function showContact(contact){
         setSelectedContact(contact);
-        console.log(contact)
 
         if(toggleShowPopup === 'invisible'){
             setToggleShowPopup('visible');
@@ -79,8 +78,8 @@ export function Header(){
                         />                
                 </div>
 
-                <div id='popup' className={`${toggleShowPopup}`}>
-                    <Contacts target={selectedContact} />                  
+                <div id='popup'>
+                    <Contacts target={selectedContact} visibility={toggleShowPopup}/>                  
                 </div>                  
 
                     <div>            
@@ -126,7 +125,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4300) }} />
+                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4270) }} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu

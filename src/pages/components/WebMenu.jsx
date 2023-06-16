@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { RxChevronDown } from "react-icons/rx"
 
+import { scrollToSelectedOption } from "../../utils/scrollToSelectedOption";
+
 export function WebMenu({ menuOption }) {
 
     const [element, setElement] = useState('');
@@ -21,15 +23,10 @@ export function WebMenu({ menuOption }) {
             
         }
     }
-
   
-    function scrollToSelectedOption(positionY){
+    function setPosition(positionY){
 
-        window.scroll({
-            top: positionY,
-            left: 0,
-            behavior: "smooth"
-        })
+        scrollToSelectedOption(positionY);
 
         setToggleShow('invisible');
         
@@ -44,7 +41,7 @@ export function WebMenu({ menuOption }) {
                 className="font-bold no-underline"
                 onMouseEnter={setVisibilityItem} 
                 onMouseLeave={setVisibilityItem}
-                onClick={menuOption.hasChild ? setVisibilityItem : ()=>{scrollToSelectedOption(menuOption.positionY)}}                
+                onClick={menuOption.hasChild ? setVisibilityItem : ()=>{setPosition(menuOption.positionY)}}                
             >
                 {menuOption.description}
             </a>
@@ -64,7 +61,7 @@ export function WebMenu({ menuOption }) {
                 
                     {menuOption.subMenu.map((item, i) => {                                     
                         return <li key={i} className="hover:bg-orange-400 hover:text-white transition-500" >
-                            <a className="ml-12 md:ml-0" onClick={()=>{scrollToSelectedOption(item.positionY)}}>{item.description} </a>
+                            <a className="ml-12 md:ml-0" onClick={()=>{setPosition(item.positionY)}}>{item.description} </a>
                             <div className="mx-2 md:mx-8 py-1 border-b-2 border-slate-300"/>
                         </li>
                         })}                                      
