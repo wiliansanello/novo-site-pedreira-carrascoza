@@ -126,7 +126,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4200) }} />
+                                        <WebMenu menuOption={{ hasChild: false, description: 'Remineralizador', positionY: getPositionY(2300, 4300) }} />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
                                         <WebMenu
@@ -147,7 +147,7 @@ export function Header(){
                                         />
                                     </li>
                                     <li className="md:px-4 hover:bg-orange-400 hover:text-white duration-200">
-                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6150) }}/>  
+                                        <WebMenu  menuOption={{ hasChild: false, description:'Contato', positionY: getPositionY(5720,6200) }}/>  
                                     </li>                        
                                 </ul>
                                 </div>
